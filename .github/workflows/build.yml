@@ -1,0 +1,6 @@
+on: [push, pull_request, workflow_dispatch]
+name: Build firmware
+
+jobs:
+  build:
+    uses: spamwax/zmk/.github/workflows/build-user-config.yml@main

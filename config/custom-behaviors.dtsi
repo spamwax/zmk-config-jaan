@@ -1,0 +1,190 @@
+/ {
+    behaviors {
+        appswmac: app_switch_mac {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+            ignored-key-positions = <14 15>; // Ignort SHIFT key position so we can go back in the window list
+            // timeout-ms = <1000>;
+        };
+        appswwin: app_switch_win {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <14 15>; // Ignort SHIFT key position so we can go back in the window list
+            // timeout-ms = <1000>;
+        };
+        // capsword: behavior_caps_word {
+        //     compatible = "zmk,behavior-caps-word";
+        //     label = "CAPSWORD";
+        //     #binding-cells = <0>;
+        //     mods = <MOD_LSFT>;
+        //     continue-list = <UNDERSCORE BACKSPACE DELETE>;
+        //     ignore-alphas;
+        //     ignore-numbers;
+        //     ignore-modifiers;
+        // };
+        // /omit-if-no-ref/ numword: behavior_numword {
+        //     compatible = "zmk,behavior-caps-word";
+        //     label = "NUMWORD";
+        //     #binding-cells = <0>;
+        //     layers = <NUM>;                           // insert location of numbers layer here
+        //     continue-list = <COMMA>;  // adjust as desired
+        //     // continue-list = <BACKSPACE DELETE DOT COMMA COLON MINUS PLUS STAR>;  // adjust as desired
+        //     ignore-numbers;                           // numbers don't deactivate the layer
+        //     /delete-property/ mods;
+        // };
+        hl: hrmod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <70>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS RIGHT_THUMB_KEYS>;
+            hold-trigger-on-release;
+        };
+        hr: hrmod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS LEFT_THUMB_KEYS>;
+            hold-trigger-on-release;
+        };
+        ltr: my_layer_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            hold-trigger-key-positions = <21 22 23 24 25>; // cut/copy/paste on LEFT side
+            tapping-term-ms = <170>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <150>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        ltl: my_layer_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "balanced";
+            hold-trigger-key-positions = <5 6 7 8 15 16 17 18 26 27 28 29>; // Numbers on RIGHT side
+            tapping-term-ms = <170>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <150>;
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        tmb: miryoku_thumb_layer {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = THUMB_HOLDING_TYPE;
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            //global-quick-tap; // no typing streak
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        tmb_hold_preferred: thumb_layer_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = "hold-preferred";
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            //global-quick-tap; // no typing streak
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+        };
+        mmt: my_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+        z_shrt_gr: z_shortcut_cmd_grave {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&ltl COMMON_SHORTCUTS Z>, <&kp GRAVE>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+        dqt_sqt: double_then_single_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DQT>, <&kp SQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        qtmacnewtab: mac_new_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&dqt_sqt>, <&kp LG(T)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+        qtwinnewtab: win_new_tab {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&dqt_sqt>, <&kp LC(T)>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+        tab_bksp: game_tab_bksp {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp BACKSPACE>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        shft_bspc: shift_backspace {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DELETE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        tmb_mrph_del: thumb_morph_delete {
+            compatible = "zmk,behavior-hold-tap";
+            flavor = THUMB_HOLDING_TYPE;
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            //global-quick-tap; // no typing streak
+            retro-tap; // allow slow (hold-like) taps
+            #binding-cells = <2>;
+            bindings = <&mo>, <&shft_bspc>;
+        };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
+        /*
+          - tap: sticky shift
+          - double-tap: caps-word (shift + tap mod-morph)
+          - hold: shift
+
+          From: https://github.com/urob/zmk-config/
+        */
+        /omit-if-no-ref/ smart_shift: smart_shift {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&skq RSHFT>, <&caps_word>;
+            mods = <(MOD_RSFT)>;
+            #binding-cells = <0>;
+        };
+        /*
+          - tap: sticky gui
+          - double-tap: FUN layer (guie + tap mod-morph)
+          - hold: gui
+
+          From: https://github.com/urob/zmk-config/
+        */
+        /omit-if-no-ref/ smart_gui: smart_gui_layer_change {
+            compatible = "zmk,behavior-mod-morph";
+            bindings = <&skq LGUI>, <&to FUN>;
+            mods = <(MOD_LGUI)>;
+            keep-mods = <((MOD_LGUI))>;
+        };
+    };
+};

@@ -1,0 +1,11 @@
+manifest:
+  remotes:
+    - name: spamwax
+      url-base: https://github.com/spamwax
+  projects:
+    - name: zmk
+      remote: spamwax
+      revision: main
+      import: app/west.yml
+  self:
+    path: config

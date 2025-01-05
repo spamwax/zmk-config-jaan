@@ -1,0 +1,60 @@
+#define COMBO_TIMEOUT_MS 60
+
+#define THUMB_HOLDING_TYPE "balanced"
+//
+// THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
+// a thumb key to activate a layer.  Shorter holds are treated as taps.
+//
+#define THUMB_HOLDING_TIME 170
+//
+// THUMB_REPEAT_DECAY defines how much time you have left (milliseconds)
+// after tapping a key to hold it again in order to make it auto-repeat.
+//
+#define THUMB_REPEAT_DECAY 240 // "tap then hold" for key auto-repeat
+
+
+// |------------------------|------------------------|
+// | LEFT_HAND_KEYS         |        RIGHT_HAND_KEYS |
+// |                        |                        |
+// |     0  1  2  3  4      |       5  6  7  8  9    |
+// |    10 11 12 13 14      |      15 16 17 18 19    |
+// | 20 21 22 23 24 25      |      26 27 28 29 30 31 |
+// |          32 33 34      |      35 36 37          |
+// |------------------------|------------------------|
+//
+#define LEFT_HAND_KEYS      \
+         0  1  2  3  4      \
+        10 11 12 13 14      \
+     20 21 22 23 24 25
+
+#define RIGHT_HAND_KEYS     \
+                                    5  6  7  8  9    \
+                                   15 16 17 18 19    \
+                                   26 27 28 29 30 31
+#define LEFT_THUMB_KEYS  32 33 34
+#define RIGHT_THUMB_KEYS 35 36 37
+
+/ {
+    conditional_layers {
+        // Use Windows shortcuts for Cut/Copy/Paste & BACK/FORWARD key in the
+        // Digits layer if we are on the Windows layer.
+        compatible = "zmk,conditional-layers";
+        tri_layer1 {
+            if-layers = <WIN NUM>;
+            then-layer = <THENWIN_NUM>;
+        };
+        tri_layer2 {
+            if-layers = <WIN CUR>;
+            then-layer = <THENWIN_CUR>;
+        };
+        tri_layer3 {
+            if-layers = <WIN MCR>;
+            then-layer = <THENWIN_MCR>;
+        };
+        tri_layer4 {
+            if-layers = <WIN COMMON_SHORTCUTS>;
+            then-layer = <THENWIN_SHORTCUTS>;
+        };
+    };
+
+};
