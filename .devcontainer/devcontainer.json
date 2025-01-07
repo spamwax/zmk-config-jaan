@@ -16,7 +16,7 @@
 	// "runServices": [
 	//	"build"
 	//],
-	"onCreateCommand": "cp /run/secrets/khersak_ssh_key /home/hamid/.ssh/id_rsa && chmod 400 /home/hamid/.ssh/id_rsa",
+	"onCreateCommand": "cp /run/secrets/khersak_ssh_key /home/${USERNAME}/.ssh/id_rsa && chmod 400 /home/${USERNAME}/.ssh/id_rsa",
 	// The optional 'workspaceFolder' property is the path VS Code should open by default when
 	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
 	"workspaceFolder": "/workspace/zmk-config",
@@ -29,7 +29,7 @@
 	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
 	// "shutdownAction": "none",
 	// Uncomment the next line to run commands after the container is created.
-	// "postCreateCommand": "cat /etc/os-release",
+	"postCreateCommand": "git config --global core.excludesfile /home/${USERNAME}/.gitignore_global",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
@@ -50,7 +50,7 @@
 				//"editor.letterSpacing": 0.1,
 				"editor.fontLigatures": true,
 				"editor.formatOnSave": true,
-				// "shellcheck.executablePath": "/home/hamid/.local/share/nvim/mason/bin/shellcheck",
+				// "shellcheck.executablePath": "/home/${USERNAME}/.local/share/nvim/mason/bin/shellcheck",
 				"shellcheck.customArgs": [
 					"--external-sources"
 				],
