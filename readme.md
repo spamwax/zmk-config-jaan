@@ -6,7 +6,7 @@
 
 # ZMK CONFIG FOR THE JAAN SPLIT KEYBOARD
 
-[Here](https://github.com/spamwax/jaan) you can find the hardware files and build guide.\
+[Here](https://github.com/spamwax/jaan) you can find the hardware files and build guide.
 
 Jaan is a 48 key column-staggered, column-fanned, column-welled(?!) split keyboard running [ZMK](https://zmk.dev/). It's meant to be used with a nice!nano.
 

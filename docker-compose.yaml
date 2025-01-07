@@ -17,10 +17,9 @@ services:
     user: "root"
     # Specify the group in question
     group_add:
-      - '1000'
+      - ${GROUP_ID}
     volumes:
       # The volumes to chown
-      # - /tank/anbaar/projects/hobbies/zmk_firmwares/zmk:/workspace/zmk
       - ${HOST_CONFIG_DIR}:${DOCKER_CONFIG_DIR}
       - /tmp:/tmp
       - my_zmk:${DOCKER_ZMK_DIR}
@@ -33,10 +32,10 @@ services:
       - -c
       - |
         mkdir -p "/workspace/zmk-config/output"
-        chown -R 1000:1000 /workspace/zmk /workspace/zmk/zephyr /workspace/zmk/modules /workspace/zmk/tools /root /tmp /workspace/zmk-config/output || echo
+        chown -R ${USER_ID}:${GROUP_ID} /workspace/zmk /workspace/zmk/zephyr /workspace/zmk/modules /workspace/zmk/tools /root /tmp /workspace/zmk-config/output || echo
 
   build:
-    user: "1000:1000"
+    user: ${USER_ID}:${GROUP_ID}
     image: private/zmk
     environment:
       - ZEPHYR_VERSION=${ZEPHYR_VERSION}
@@ -56,7 +55,6 @@ services:
         ls
     volumes:
       # The volumes to chown
-      # - /tank/anbaar/projects/hobbies/zmk_firmwares/zmk:/workspace/zmk
       - ${HOST_CONFIG_DIR}:${DOCKER_CONFIG_DIR}
       - /tmp:/tmp
       - my_zmk:${DOCKER_ZMK_DIR}
