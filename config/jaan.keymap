@@ -71,11 +71,11 @@ display-name= "BASE"                       ;
 // ╷            ╷           ╷           ╷                  ╷                  ╷                ╷   ╷                  ╷                  ╷                ╷           ╷           ╷           ╷
 
                              &kp G       &kp M              &kp L                                                      &kp U              &kp O            &kp B                 
-    &kp W        &kp W       &kp G       &kp M              &kp L              &qtmacnewtab         &kp SEMI           &kp U              &kp O            &kp B       &mmt MEH V  &mmt MEH V
-    &kp W        &hl LGUI D  &kp S       &hl LALT T         &hl LCTRL N        &hl LSHFT COMMA      &hr RSHFT DOT      &hr RCTRL A        &hr RALT E       &kp I       &hr RGUI H  &mmt MEH V
-                 &kp F       &kp X       &kp C              &kp R              &ltl FUN FSLH        &mmt HYPER UNDER   &kp P              &kp Y            &kp J       &kp K
-                                                                               &ltl FUN FSLH        &ltl FUN FSLH
-                                         TMHP CUR ESC       TM_MRPH_DEL NUM 0  &mmt LGUI TAB        &tmb LOW RET       &tmb MCR SPACE     TMHP SYM DEL
+    &kp W        &kp W       &kp G       &kp M              &kp L              &kp L                &kp SEMI           &kp U              &kp O            &kp B       &kp B       &kp B
+    &kp W        &kp D       &kp S       &kp T              &kp N              &kp X                &kp K              &kp A              &kp E            &kp I       &kp B       &kp B
+                 &kp F       &kp X       &kp C              &kp R              &kp X                &kp SEMI           &kp P              &kp Y            &kp J       &kp K
+                                                                               &kp X                &kp X
+                                         &kp F              &kp R              &kp H                &kp T              &kp M              &kp L
 
                         >;
                  };
