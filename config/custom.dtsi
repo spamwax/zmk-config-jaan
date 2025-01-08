@@ -34,27 +34,27 @@
 #define LEFT_THUMB_KEYS  32 33 34
 #define RIGHT_THUMB_KEYS 35 36 37
 
-/ {
-    conditional_layers {
-        // Use Windows shortcuts for Cut/Copy/Paste & BACK/FORWARD key in the
-        // Digits layer if we are on the Windows layer.
-        compatible = "zmk,conditional-layers";
-        tri_layer1 {
-            if-layers = <WIN NUM>;
-            then-layer = <THENWIN_NUM>;
-        };
-        tri_layer2 {
-            if-layers = <WIN CUR>;
-            then-layer = <THENWIN_CUR>;
-        };
-        tri_layer3 {
-            if-layers = <WIN MCR>;
-            then-layer = <THENWIN_MCR>;
-        };
-        tri_layer4 {
-            if-layers = <WIN COMMON_SHORTCUTS>;
-            then-layer = <THENWIN_SHORTCUTS>;
-        };
-    };
+/* / { */
+/*     conditional_layers { */
+/*         // Use Windows shortcuts for Cut/Copy/Paste & BACK/FORWARD key in the */
+/*         // Digits layer if we are on the Windows layer. */
+/*         compatible = "zmk,conditional-layers"; */
+/*         tri_layer1 { */
+/*             if-layers = <WIN NUM>; */
+/*             then-layer = <THENWIN_NUM>; */
+/*         }; */
+/*         tri_layer2 { */
+/*             if-layers = <WIN CUR>; */
+/*             then-layer = <THENWIN_CUR>; */
+/*         }; */
+/*         tri_layer3 { */
+/*             if-layers = <WIN MCR>; */
+/*             then-layer = <THENWIN_MCR>; */
+/*         }; */
+/*         tri_layer4 { */
+/*             if-layers = <WIN COMMON_SHORTCUTS>; */
+/*             then-layer = <THENWIN_SHORTCUTS>; */
+/*         }; */
+/*     }; */
 
-};
+/* }; */
