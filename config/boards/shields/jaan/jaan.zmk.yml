@@ -7,7 +7,7 @@ requires: [nice_nano_v2]
 # exposes: [i2c_oled] # this is from juriform36
 features:
   - keys
-  - display
+  # - display
 siblings:
   - jaan_left
   - jaan_right

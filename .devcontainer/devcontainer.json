@@ -40,7 +40,8 @@
 				"mads-hartmann.bash-ide-vscode",
 				"plorefice.devicetree",
 				"dustinsanders.an-old-hope-theme-vscode",
-				"idleberg.hopscotch"
+				"idleberg.hopscotch",
+				"plorefice.devicetree"
 			],
 			"settings": {
 				"editor.fontFamily": "LilexNFM-Regular",
