@@ -57,6 +57,11 @@
             layers = <0>;
             slow-release;
         };
+
+        comboz {
+            bindings = <&kp RA(RC(RG(RS(M))))>;
+            key-positions = <42 24>;
+        };
     };
 
     macros {
@@ -90,10 +95,10 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-&kp G     &kp M  &kp L  &kp U  &kp O  &kp B  &kp W  &kp W  &kp G  &kp M  &kp L  &kp L
-&kp SEMI  &kp U  &kp O  &kp B  &kp B  &kp B  &kp W  &kp D  &kp S  &kp T  &kp N  &termexit
-&kp K     &kp A  &kp E  &kp I  &kp B  &kp B  &kp F  &kp X  &kp C  &kp R  &kp X  &kp SEMI
-&kp P     &kp Y  &kp J  &kp K  &kp X  &kp X  &kp F  &kp R  &kp H  &kp T  &kp M  &kp L
+&kp G          &kp M  &kp L  &kp U  &kp O  &kp DOUBLE_QUOTES  &kp SEMICOLON   &kp W  &kp G  &kp M  &kp L  &kp L
+&kp Z          &kp U  &kp O  &kp B  &kp B  &kp COMMA          &kp PERIOD      &kp D  &kp S  &kp T  &kp N  &kp Q
+&kp ESCAPE     &kp A  &kp E  &kp I  &kp B  &kp SLASH          &kp UNDERSCORE  &kp X  &kp C  &kp R  &kp X  &kp DELETE
+&kp BACKSPACE  &kp Y  &kp J  &kp K  &kp X  &kp X              &kp F           &kp R  &kp H  &kp T  &kp C  &kp ENTER
             >;
         };
 
