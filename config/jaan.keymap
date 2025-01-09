@@ -1,3 +1,9 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
 #define BASE 0
 #define LOW 1
 #define GAM 2
@@ -42,8 +48,6 @@
 /* #include "custom-combos.dtsi" */
 
 #include "custom-behaviors.dtsi"
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 
 /* #include "custom-macros.dtsi" */
 
