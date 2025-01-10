@@ -73,6 +73,168 @@
         };
     };
 
+    behaviors {
+        hl: hrmod_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <70>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            tapping-term-ms = <240>;
+            hold-trigger-key-positions = <6 18 30 43 31 19 7 8 9 10 11 20 21 22 23 32 33 34 44 45 35 42 46 47>;
+        };
+
+        hr: hrmod_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <180>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            tapping-term-ms = <240>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+        };
+
+        ltr: layer_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTR";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            hold-trigger-key-positions = <25 38 39 40 29>;
+        };
+
+        ltl: layer_tap_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTL";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            hold-trigger-key-positions = <43 44 45 31 32 33 19 20 21 18 22 35>;
+        };
+
+        tmb: miryoku_thumb_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TMB";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <240>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            retro-tap;
+        };
+
+        tmb_hold_preferred: thumb_layer_hold_preferred {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TMB_HOLD_PREFERRED";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <240>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+            retro-tap;
+        };
+
+        mmt: my_mod_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MMT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+        };
+
+        z_shrt_gr: z_shortcut_cmd_grave {
+            compatible = "zmk,behavior-mod-morph";
+            label = "Z_SHRT_GR";
+            bindings = <&ltl 11 Z>, <&kp GRAVE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        dqt_sqt: double_then_single_quote {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DQT_SQT";
+            bindings = <&kp DOUBLE_QUOTES>, <&kp SQT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        qtmacnewtab: mac_new_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QTMACNEWTAB";
+            bindings = <&dqt_sqt>, <&kp T>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        qtwinnewtab: win_new_tab {
+            compatible = "zmk,behavior-mod-morph";
+            label = "QTWINNEWTAB";
+            bindings = <&dqt_sqt>, <&kp LC(T)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI|MOD_RGUI)>;
+        };
+
+        shft_bspc: shift_backspace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHFT_BSPC";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_LSFT)>;
+        };
+
+        tmb_mrph_del: thumb_morph_delete {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TMB_MRPH_DEL";
+            bindings = <&mo>, <&shft_bspc>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <170>;
+            quick-tap-ms = <240>;
+            retro-tap;
+        };
+
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "SKQ";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -95,10 +257,154 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-&kp G          &kp M  &kp L  &kp U  &kp O  &kp DOUBLE_QUOTES  &kp SEMICOLON   &kp W  &kp G  &kp M  &kp L  &kp L
-&kp Z          &kp U  &kp O  &kp B  &kp B  &kp COMMA          &kp PERIOD      &kp D  &kp S  &kp T  &kp N  &kp Q
-&kp ESCAPE     &kp A  &kp E  &kp I  &kp B  &kp SLASH          &kp UNDERSCORE  &kp X  &kp C  &kp R  &kp X  &kp DELETE
-&kp BACKSPACE  &kp Y  &kp J  &kp K  &kp X  &kp X              &kp F           &kp R  &kp H  &kp T  &kp C  &kp ENTER
+&kp GRAVE                     &kp W                &kp N2  &kp N3          &kp N4              &qtwinnewtab  &kp SEMICOLON                         &kp LBKT             &kp G            &kp RBKT  &mmt LS(LA(LEFT_CONTROL)) V  &kp ESC
+&hl LEFT_SHIFT Z              &kp U                &kp G   &kp M           &kp L               &kp COMMA     &kp DOT                               &kp U                &kp O            &kp B     &hr RIGHT_GUI H              &hr RSHFT Q
+&tmb_hold_preferred 7 ESCAPE  &kp F                &kp S   &hl LEFT_ALT T  &hl LEFT_CONTROL N  &lt 8 SLASH   &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &hr RIGHT_CONTROL A  &hr RIGHT_ALT E  &kp I     &kp K                        &tmb_hold_preferred 5 DELETE
+&tmb_mrph_del 6 0             &mmt LEFT_GUI SPACE  &kp X   &kp C           &kp R               &kp TAB       &kp RSHFT                             &kp P                &kp Y            &kp J     &tmb 1 RET                   &tmb 9 SPACE
+            >;
+        };
+
+        low {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &caps_word  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans
+            >;
+        };
+
+        game {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        windows {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        mirror {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        symbols {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        numbers {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        cursor {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        functions {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        macros {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        system {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        common_shortcuts {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        win_number {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        win_cursor {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        win_macro {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        win_shortcuts {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        qwerty {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
