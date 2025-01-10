@@ -1,8 +1,8 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
+// #include <dt-bindings/zmk/bt.h>
+// #include <dt-bindings/zmk/ext_power.h>
+// #include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
 #define LOW 1
@@ -22,13 +22,6 @@
 #define THENWIN_SHORTCUTS 15
 #define QWERTY 16
 
-&mt {
-    quick-tap-ms = <100>;
-    global-quick-tap;
-    flavor = "tap-preferred";
-    tapping-term-ms = <170>;
-};
-
 #define HYPER LG(LC(LA(LSHFT)))
 #define MEH   LC(LA(LSHFT))
 #define HYPF7 &kp LG(LC(LA(LS(F7))))
@@ -38,17 +31,22 @@
 #define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
 #define TM_MRPH_DEL &tmb_mrph_del
 
-&num_word {
-    layers = <NUM>;  // replace NUM by the location of numbers layer
-    continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
-};
+// &mt {
+//     quick-tap-ms = <100>;
+//     global-quick-tap;
+//     flavor = "tap-preferred";
+//     tapping-term-ms = <170>;
+// };
 
-#include "custom.dtsi"
 
+// &num_word {
+//     layers = <NUM>;  // replace NUM by the location of numbers layer
+//     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
+// };
+
+// #include "custom.dtsi"
 /* #include "custom-combos.dtsi" */
-
-#include "custom-behaviors.dtsi"
-
+// #include "custom-behaviors.dtsi"
 /* #include "custom-macros.dtsi" */
 
 / {
