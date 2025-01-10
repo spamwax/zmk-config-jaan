@@ -233,6 +233,22 @@
             quick-release;
             ignore-modifiers;
         };
+
+        appswmac_behavior_tri_state: appswmac_behavior_tri_state {
+            compatible = "zmk,behavior-sticky-key";
+            label = "APPSWMAC_BEHAVIOR_TRI_STATE";
+            bindings = <&none>;
+            #binding-cells = <1>;
+            release-after-ms = <200>;
+        };
+
+        appswwin_behavior_tri_state: appswwin_behavior_tri_state {
+            compatible = "zmk,behavior-sticky-key";
+            label = "APPSWWIN_BEHAVIOR_TRI_STATE";
+            bindings = <&none>;
+            #binding-cells = <1>;
+            release-after-ms = <200>;
+        };
     };
 
     keymap {
