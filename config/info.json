@@ -3,7 +3,7 @@
   "name": "Jaan",
   "url": "https://github.com/spamwax/jaan",
   "layouts": {
-    "LAYOUT": {
+    "JAAN": {
       "layout": [
         { "row": 0, "col":  2, "x":   2.5, "y": 0.75, "r":  -4, "rx":  -0.5, "ry":     0 },
         { "row": 0, "col":  3, "x":  3.75, "y":    0 },
