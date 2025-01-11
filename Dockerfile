@@ -15,7 +15,10 @@ ENV USER_NAME=$USERNAME
 RUN apt -y update && apt -y install jq htop neovim openssh-client shellcheck reserialize
 # RUN apt install -y python3-pip
 # RUN python3 -m pip install --break-system-packages remarshal
-
+# Install latest version of shellcheck
+RUN wget https://github.com/koalaman/shellcheck/releases/download/stable/shellcheck-stable.linux.aarch64.tar.xz \
+  && tar -xvf shellcheck-stable.linux.aarch64.tar.xz \
+  && cp ./shellcheck-stable/shellcheck $(which shellcheck) 
 
 # Create the user
 RUN deluser ubuntu || echo
