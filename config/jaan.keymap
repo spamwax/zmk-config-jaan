@@ -1,5 +1,8 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
 
 // #include <dt-bindings/zmk/bt.h>
 // #include <dt-bindings/zmk/ext_power.h>
@@ -30,6 +33,19 @@
 #define ALFRED &kp LG(LC(LA(LS(RBKT))))
 #define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
 #define TM_MRPH_DEL &tmb_mrph_del
+
+#define COMBO_TIMEOUT_MS 60
+#define THUMB_HOLDING_TYPE "balanced"
+//
+// THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
+// a thumb key to activate a layer.  Shorter holds are treated as taps.
+//
+#define THUMB_HOLDING_TIME 170
+//
+// THUMB_REPEAT_DECAY defines how much time you have left (milliseconds)
+// after tapping a key to hold it again in order to make it auto-repeat.
+//
+#define THUMB_REPEAT_DECAY 240 // "tap then hold" for key auto-repeat
 
 // &mt {
 //     quick-tap-ms = <100>;
@@ -396,7 +412,7 @@
 
         tmb: miryoku_thumb_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "Thumb's layer tap";
+            label = "Thumb layer tap";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -502,7 +518,7 @@
 
         fake_appswmac_behavior_tristate: fake_appswmac_behavior_tristate {
             compatible = "zmk,behavior-sticky-key";
-            label = "Placeholder for behavior-tri-state. GUI+TAB macOS";
+            label = "Placeholder for tri-state. GUI+TAB macOS";
             bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <200>;
@@ -510,7 +526,7 @@
 
         fake_appswwin_behavior_tristate: fake_appswwin_behavior_tristate {
             compatible = "zmk,behavior-sticky-key";
-            label = "Placeholder for behavior-tri-state. ALT+TAB Win";
+            label = "Placeholder for tri-state. ALT+TAB Win";
             bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <200>;
@@ -526,7 +542,7 @@
 
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "tap:sticky shift, double-tap:caps-word, hold:shift";
+            label = "tap:stick shft, doubletap:capsword, hold:shft";
             bindings = <&skq RSHFT>, <&caps_word>;
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
@@ -534,7 +550,7 @@
 
         smart_gui: smart_gui_layer_changi {
             compatible = "zmk,behavior-mod-morph";
-            label = "tap:sticky gui, double-tap:layer change, hold:gui";
+            label = "tap:stick gui, doubletap:&to 8, hold:gui";
             bindings = <&skq LGUI>, <&to 8>;
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
