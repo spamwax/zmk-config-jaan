@@ -356,7 +356,7 @@
 
         hr: hrmod_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HR";
+            label = "Home row mod - Right";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -370,7 +370,7 @@
 
         ltr: layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTR";
+            label = "Layer tap - Right";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -383,7 +383,7 @@
 
         ltl: layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "LTL";
+            label = "Layer tap - Left";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -396,7 +396,7 @@
 
         tmb: miryoku_thumb_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "TMB";
+            label = "Thumb's layer tap";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -408,7 +408,7 @@
 
         tmb_hold_preferred: thumb_layer_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "TMB_HOLD_PREFERRED";
+            label = "Thumb layer tap - hold pref.";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -420,7 +420,7 @@
 
         mmt: my_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "MMT";
+            label = "Modifier tap";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -432,7 +432,7 @@
 
         z_shrt_gr: z_shortcut_cmd_grave {
             compatible = "zmk,behavior-mod-morph";
-            label = "Z_SHRT_GR";
+            label = "Z shortcut layer GUI+Grave";
             bindings = <&ltl 11 Z>, <&kp GRAVE>;
 
             #binding-cells = <0>;
@@ -452,7 +452,7 @@
 
         qtmacnewtab: mac_new_tab {
             compatible = "zmk,behavior-mod-morph";
-            label = "QTMACNEWTAB";
+            label = "Quot. GUI-T for macOS";
             bindings = <&dqt_sqt>, <&kp T>;
 
             #binding-cells = <0>;
@@ -462,7 +462,7 @@
 
         qtwinnewtab: win_new_tab {
             compatible = "zmk,behavior-mod-morph";
-            label = "QTWINNEWTAB";
+            label = "Quot. CTRL-T for Win";
             bindings = <&dqt_sqt>, <&kp LC(T)>;
 
             #binding-cells = <0>;
@@ -471,7 +471,7 @@
 
         shft_bspc: shift_backspace {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHFT_BSPC";
+            label = "Backspace Delete(+SHIFT)";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -480,7 +480,7 @@
 
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
-            label = "TMB_MRPH_DEL";
+            label = "Thumb &mo + Backspace morph";
             bindings = <&mo>, <&shft_bspc>;
 
             #binding-cells = <2>;
@@ -492,7 +492,7 @@
 
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
-            label = "SKQ";
+            label = "Quick release sticky";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
@@ -502,7 +502,7 @@
 
         fake_appswmac_behavior_tristate: fake_appswmac_behavior_tristate {
             compatible = "zmk,behavior-sticky-key";
-            label = "FAKE_APPSWMAC_BEHAVIOR_TRISTATE";
+            label = "Placeholder for behavior-tri-state. GUI+TAB macOS";
             bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <200>;
@@ -510,7 +510,7 @@
 
         fake_appswwin_behavior_tristate: fake_appswwin_behavior_tristate {
             compatible = "zmk,behavior-sticky-key";
-            label = "FAKE_APPSWWIN_BEHAVIOR_TRISTATE";
+            label = "Placeholder for behavior-tri-state. ALT+TAB Win";
             bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <200>;
@@ -518,7 +518,7 @@
 
         fake_num_word_behavior: fake_num_word_behavior {
             compatible = "zmk,behavior-sticky-key";
-            label = "FAKE_NUM_WORD_BEHAVIOR";
+            label = "Placeholder for num-word-behavior";
             bindings = <&none>;
             #binding-cells = <1>;
             release-after-ms = <200>;
@@ -526,18 +526,16 @@
 
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "Smart Shift";
+            label = "tap:sticky shift, double-tap:caps-word, hold:shift";
             bindings = <&skq RSHFT>, <&caps_word>;
-
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
 
         smart_gui: smart_gui_layer_changi {
             compatible = "zmk,behavior-mod-morph";
-            label = "SMART_GUI";
+            label = "tap:sticky gui, double-tap:layer change, hold:gui";
             bindings = <&skq LGUI>, <&to 8>;
-
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
