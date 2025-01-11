@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-
 // #include <dt-bindings/zmk/bt.h>
 // #include <dt-bindings/zmk/ext_power.h>
 // #include <dt-bindings/zmk/outputs.h>
@@ -33,18 +32,21 @@
 #define ALFRED &kp LG(LC(LA(LS(RBKT))))
 #define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
 #define TM_MRPH_DEL &tmb_mrph_del
-
 #define COMBO_TIMEOUT_MS 60
 #define THUMB_HOLDING_TYPE "balanced"
+
 //
 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
 // a thumb key to activate a layer.  Shorter holds are treated as taps.
 //
+
 #define THUMB_HOLDING_TIME 170
+
 //
 // THUMB_REPEAT_DECAY defines how much time you have left (milliseconds)
 // after tapping a key to hold it again in order to make it auto-repeat.
 //
+
 #define THUMB_REPEAT_DECAY 240 // "tap then hold" for key auto-repeat
 
 // &mt {
@@ -195,6 +197,7 @@
             tap-ms = <0>;
             bindings = <&tog NUM &num_word>;
         };
+
         visave: vim_save_normal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -202,6 +205,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp SEMICOLON &kp W &kp ENTER>;
         };
+
         nextdiag: next_diag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -209,6 +213,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp RBKT &kp G>;
         };
+
         prevdiag: prev_diag {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -216,6 +221,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp LBKT &kp G>;
         };
+
         nexthunk: next_hunk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -223,6 +229,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp RBKT &kp C>;
         };
+
         prevhunk: prev_hunk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -230,6 +237,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp LBKT &kp C>;
         };
+
         preview_hunk: preview_hunk {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -237,6 +245,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp COMMA &kp H &kp P>;
         };
+
         viquit: vim_write_quit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -244,6 +253,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp SEMICOLON &kp W &kp Q &kp A &kp ENTER>;
         };
+
         texit: term_exit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -251,6 +261,7 @@
             tap-ms = <0>;
             bindings = <&kp E &kp X &kp I &kp T &kp ENTER>;
         };
+
         vinsertsave: vim_insert_save {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -258,6 +269,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(O) &kp SEMICOLON &kp W &kp ENTER>;
         };
+
         nvimt: nvim_terminal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -265,6 +277,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp SEMICOLON &kp V &kp S &kp ENTER &kp SEMICOLON &kp T &kp E &kp R &kp M &kp ENTER &kp I>;
         };
+
         nvimqt: nvim_quit {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -272,6 +285,7 @@
             tap-ms = <0>;
             bindings = <&kp LC(LBKT) &kp SEMICOLON &kp Q &kp A &kp ENTER>;
         };
+
         surwrd: surround_wrd_dqoute {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -279,6 +293,7 @@
             tap-ms = <0>;
             bindings = <&kp V &kp I &kp LS(W) &kp LS(S) &kp DOUBLE_QUOTES>;
         };
+
         gitstat: git_status {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -286,6 +301,7 @@
             tap-ms = <0>;
             bindings = <&kp G &kp S &kp T &kp ENTER>;
         };
+
         nvim: run_nvim {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -293,65 +309,59 @@
             tap-ms = <0>;
             bindings = <&kp N &kp V &kp I &kp M &kp ENTER>;
         };
+
         zfs: zfs_space {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <30>;
-                tap-ms = <0>;
-                bindings = <&kp Z &kp F &kp S &kp SPACE>;
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <0>;
+            bindings = <&kp Z &kp F &kp S &kp SPACE>;
         };
+
         gif: gif {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp N2>
-                , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp G &kp I &kp F>
-                ;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp N2>,
+                <&macro_release>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp G &kp I &kp F>;
         };
 
         bt_0: bt_profile_macro_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0>;
         };
 
         bt_1: bt_profile_macro_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 1>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1>;
         };
 
         bt_2: bt_profile_macro_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 2>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2>;
         };
 
         bt_3: bt_profile_macro_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 3>;
+            bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
+
         bt_clrall: bt_clr_all {
             compatible = "zmk,behavior-macro";
             wait-ms = <40>;
-            tap-ms  = <40>;
+            tap-ms = <40>;
             #binding-cells = <0>;
-            bindings = <&bt BT_CLR>,
-                       <&bt BT_SEL 0>, <&bt BT_CLR>,
-                       <&bt BT_SEL 1>, <&bt BT_CLR>,
-                       <&bt BT_SEL 2>, <&bt BT_CLR>,
-                       <&bt BT_SEL 3>, <&bt BT_CLR>;
+            bindings = <&bt BT_CLR &bt BT_SEL 0 &bt BT_CLR &bt BT_SEL 1 &bt BT_CLR &bt BT_SEL 2 &bt BT_CLR &bt BT_SEL 3 &bt BT_CLR>;
         };
     };
 
@@ -544,6 +554,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "tap:stick shft, doubletap:capsword, hold:shft";
             bindings = <&skq RSHFT>, <&caps_word>;
+
             #binding-cells = <0>;
             mods = <(MOD_RSFT)>;
         };
@@ -552,6 +563,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "tap:stick gui, doubletap:&to 8, hold:gui";
             bindings = <&skq LGUI>, <&to 8>;
+
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
             keep-mods = <(MOD_LGUI)>;
@@ -582,7 +594,7 @@
             bindings = <
                      &kp NUMBER_2  &kp NUMBER_3               &kp NUMBER_4                                                     &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
 &kp GRAVE     &kp W  &kp G         &kp M                      &kp L              &qtwinnewtab     &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
-&hl LSHIFT Z  &kp S  &kp T         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
+&hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
                                                                                  &kp TAB          &trans
                                    &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &mmt LGUI SPACE  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
