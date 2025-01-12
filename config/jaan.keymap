@@ -190,13 +190,13 @@
     };
 
     macros {
-        tonumword: activate_numword {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <0>;
-            bindings = <&tog NUM &num_word>;
-        };
+        /* tonumword: activate_numword { */
+        /*     compatible = "zmk,behavior-macro"; */
+        /*     #binding-cells = <0>; */
+        /*     wait-ms = <30>; */
+        /*     tap-ms = <0>; */
+        /*     bindings = <&tog NUM &num_word>; */
+        /* }; */
 
         visave: vim_save_normal {
             compatible = "zmk,behavior-macro";
