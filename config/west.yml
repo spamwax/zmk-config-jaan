@@ -1,10 +1,10 @@
 manifest:
   remotes:
-    - name: spamwax
-      url-base: https://github.com/spamwax
+    - name: zmk
+      url-base: https://github.com/zmk
   projects:
     - name: zmk
-      remote: spamwax
+      remote: zmk
       revision: main
       import: app/west.yml
   self:
