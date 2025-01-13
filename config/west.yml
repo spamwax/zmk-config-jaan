@@ -6,6 +6,7 @@ manifest:
     - name: zmk
       remote: spamwax-zmk
       revision: main
+      clone-depth: 1
       import: app/west.yml
   self:
     path: config
