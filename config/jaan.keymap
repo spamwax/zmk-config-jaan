@@ -603,23 +603,23 @@
 
         low {
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans                  &trans                  &trans                  &trans
+&trans  &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &trans                  &trans  &trans
+        &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                         &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+                        &to 7   &to 6   &trans  &trans  &to 9                   &to 5
             >;
         };
 
         game {
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+                  &trans  &trans    &trans                        &trans  &trans  &trans
+&kp TAB   &trans  &trans  &trans    &trans     &kp B      &to 0   &trans  &trans  &trans  &trans  &trans
+&kp BSPC  &kp D   &kp S   &kp T     &kp N      &kp H      &trans  &trans  &trans  &trans  &trans  &ltr 6 Q
+          &trans  &trans  &trans    &trans     &kp Z      &trans  &trans  &trans  &trans  &trans
+                                               &kp SPACE  &trans
+                          &kp LALT  &kp LCTRL  &kp LSHFT  &trans  &tog 7  &trans
             >;
         };
 
