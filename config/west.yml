@@ -9,7 +9,6 @@ manifest:
       remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
       import: 
-        - app/west.yml
         name-blocklist:
           - ci-tools
           - hal_altera
@@ -29,5 +28,6 @@ manifest:
           - openthread
           - edtt
           - trusted-firmware-m
+          - app/west.yml
   self:
     path: config
