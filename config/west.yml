@@ -5,7 +5,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
   projects:
-    - name: zmk
+    - name: zephyr
       remote: zmkfirmware
       revision: v3.5.0+zmk-fixes
       import: 
