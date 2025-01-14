@@ -78,7 +78,7 @@ prev_dir=$(pwd)
 # echo "$DOCKER_ZMK_DIR"
 cd "$DOCKER_ZMK_DIR" || exit
 
-export ZEPHYR_VERSION="$ZEPHYR_VERSION"
+# export ZEPHYR_VERSION="$ZEPHYR_VERSION"
 
 # ls $(pwd)
 # ls -la ./app/west.yml
@@ -112,7 +112,7 @@ fi
 west zephyr-export >/dev/null
 
 
-artifact_name=${shield:+$shield-}${board}-zmk
+artifact_name=${shield:+$shield-}${board}
 extra_args=${shield:+-DSHIELD="$shield"}
 BUILD_DIR="${artifact_name}_$SUFFIX"
 if [ -d "$DOCKER_ZMK_DIR"/app/build/"$BUILD_DIR" ]; then

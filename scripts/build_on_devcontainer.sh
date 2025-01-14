@@ -76,7 +76,7 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Set defaults
-[[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.5.0"
+# [[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.5.0"
 
 local_config="$SCRIPT_DIR"/.. 
 local_zmk="$local_config"/../zmk

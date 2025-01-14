@@ -38,8 +38,8 @@ services:
     user: ${USER_ID}:${GROUP_ID}
     image: private/zmk
     environment:
-      - ZEPHYR_VERSION=${ZEPHYR_VERSION}
-      - zephyr_version=${ZEPHYR_VERSION}
+      # - ZEPHYR_VERSION=${ZEPHYR_VERSION}
+      # - zephyr_version=${ZEPHYR_VERSION}
       - USERNAME=${USERNAME}
     secrets:
       - khersak_ssh_key
