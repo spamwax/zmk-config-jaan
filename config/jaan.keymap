@@ -647,56 +647,56 @@
 
         symbols {
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+                   &trans      &trans          &trans                                &trans     &trans    &trans
+&trans  &kp LBKT   &kp RBKT    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SQT    &trans    &kp AT     &kp FSLH  &kp EXCLAMATION  &trans     &trans
+&trans  &kp CARET  &kp DOLLAR  &kp MINUS       &kp PLUS         &kp COLON  &kp BSLH  &kp STAR   &kp LPAR  &kp RPAR         &kp EQUAL  &trans
+        &kp PRCNT  &kp HASH    &trans          &kp AMPS         &kp TILDE  &kp PIPE  &kp QMARK  &trans    &trans           &trans
+                                                                &trans     &trans
+                               &trans          &trans           &trans     &trans    &trans     &trans
             >;
         };
 
         numbers {
             bindings = <
-                &trans  &trans  &trans                     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp STAR   &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp PLUS   &kp N4  &kp N5  &kp N6  &kp MINUS  &trans
-        &trans  &trans  &trans  &trans  &trans  &kp COMMA  &kp N1  &kp N2  &kp N3  &trans
-                                        &trans  &kp DOT
-                        &trans  &trans  &trans  &kp RET    &kp N0  &trans
+                           &trans     &trans     &trans                                                    &trans  &trans  &trans
+&trans          &trans     &trans     &trans     &trans     &kp LG(S)                           &kp STAR   &kp N7  &kp N8  &kp N9  &kp FSLH   &trans
+&kp LEFT_SHIFT  &trans     &trans     &trans     &trans     &fake_appswmac_behavior_tristate 0  &kp PLUS   &kp N4  &kp N5  &kp N6  &kp MINUS  &trans
+                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))                       &kp COMMA  &kp N1  &kp N2  &kp N3  &trans
+                                                            &trans                              &kp DOT
+                                      &trans     &trans     &trans                              &kp RET    &kp N0  &trans
             >;
         };
 
         cursor {
             bindings = <
-                &trans  &trans    &trans                           &trans    &trans    &trans
-&trans  &trans  &trans  &trans    &trans     &trans  &kp PG_DN     &trans    &kp UP    &trans     &kp PG_UP      &trans
-&trans  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp LG(LEFT)  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(RIGHT)  &trans
-        &trans  &trans  &trans    &trans     &trans  &trans        &trans    &trans    &trans     &trans
-                                             &trans  &trans
-                        &trans    &trans     &trans  &trans        &trans    &trans
+                    &trans  &trans    &trans                           &trans    &trans    &trans
+&trans      &trans  &trans  &trans    &trans     &trans  &kp PG_DN     &trans    &kp UP    &trans     &kp PG_UP      &trans
+&kp LSHIFT  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp LG(LEFT)  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(RIGHT)  &trans
+            &trans  &trans  &trans    &trans     &trans  &trans        &trans    &trans    &trans     &trans
+                                                 &trans  &trans
+                            &trans    &trans     &trans  &trans        &trans    &trans
             >;
         };
 
         functions {
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans                  &trans  &trans  &trans
+&trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp F5  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &kp F1  &trans  &trans  &trans
+                                                &trans  &trans
+                                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         macros {
             bindings = <
-                &trans  &trans  &trans                  &trans   &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &visave  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans   &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans   &trans
+                &trans     &trans         &trans                                                  &trans    &trans        &trans
+&trans  &trans  &prevdiag  &trans         &nextdiag  &fake_appswmac_behavior_tristate 0  &trans   &nvim     &nvimqt       &trans  &trans  &trans
+&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &trans                              &zfs     &visave   &vinsertsave  &trans  &texit  &nvimt
+        &trans  &trans     &trans         &trans     &trans                              &viquit  &gitstat  &trans        &trans  &trans
+                                                     &trans                              &trans
+                           &trans         &trans     &trans                              &trans   &trans    &trans
             >;
 
             label = "git,nvim,zfs macros";
@@ -704,12 +704,12 @@
 
         system {
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+                     &trans        &trans      &trans                                &trans  &trans  &trans
+&trans  &trans       &out OUT_TOG  &bt BT_CLR  &out OUT_BLE  &trans      &trans      &trans  &trans  &trans      &tog 10      &trans
+&trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
+        &bootloader  &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
+                                                             &trans      &trans
+                                   &trans      &trans        &trans      &trans      &trans  &trans
             >;
         };
 
