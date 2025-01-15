@@ -8,6 +8,11 @@
 // #include <dt-bindings/zmk/outputs.h>
 // #include "unsupported-behaviors.dtsi"
 
+// &num_word {
+//     layers = <NUM>;  // replace NUM by the location of numbers layer
+//     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
+// };
+
 #define BASE 0
 #define LOW 1
 #define GAM 2
@@ -55,10 +60,6 @@
 //     global-quick-tap;
 //     flavor = "tap-preferred";
 //     tapping-term-ms = <170>;
-// };
-// &num_word {
-//     layers = <NUM>;  // replace NUM by the location of numbers layer
-//     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
 // };
 // #include "custom.dtsi"
 /* #include "custom-combos.dtsi" */
