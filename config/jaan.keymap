@@ -660,7 +660,7 @@
             bindings = <
                            &trans     &trans     &trans                                                    &trans  &trans     &trans
 &trans          &trans     &trans     &trans     &trans     &kp LG(S)                           &kp STAR   &kp N7  &kp N8     &kp N9  &kp FSLH   &trans
-&kp LEFT_SHIFT  &trans     &trans     &trans     &trans     &fake_appswmac_behavior_tristate 0  &kp PLUS   &kp N4  &kp N5     &kp N6  &kp MINUS  &kp BSPC
+&kp LEFT_SHIFT  &trans     &trans     &trans     &trans     &fake_appswmac_behavior_tristate &none  &kp PLUS   &kp N4  &kp N5     &kp N6  &kp MINUS  &kp BSPC
                 &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))                       &kp COMMA  &kp N1  &kp N2     &kp N3  &kp EQUAL
                                                             &trans                              &kp DOT
                                       &trans     &trans     &trans                              &kp RET    &kp N0  &kp SPACE
@@ -671,7 +671,7 @@
             bindings = <
                        &trans      &trans        &trans                                                        &trans           &trans    &trans
 &trans      &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)                         &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
-&kp LSHIFT  &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac_behavior_tristate  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
+&kp LSHIFT  &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac_behavior_tristate B  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
             &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))                     &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
                                                                &trans                            &trans
                                    &trans        &trans        &trans                            &trans        &trans           &trans
@@ -739,7 +739,7 @@
             bindings = <
                    &trans     &trans     &trans                                                 &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &kp LC(S)                         &trans    &trans  &trans  &trans  &trans   &trans
-&trans  &trans     &trans     &trans     &trans     &fake_appswwin_behavior_tristate  &kp HOME  &trans  &trans  &trans  &kp END  &trans
+&trans  &trans     &trans     &trans     &trans     &fake_appswwin_behavior_tristate 0 &kp HOME  &trans  &trans  &trans  &kp END  &trans
         &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))                     &trans    &trans  &trans  &trans  &trans
                                                     &trans                            &trans
                               &trans     &trans     &trans                            &trans    &trans  &trans
@@ -750,7 +750,7 @@
             bindings = <
                 &trans  &trans  &trans                                            &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &kp LC(S)                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &fake_appswwin_behavior_tristate  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &fake_appswwin_behavior_tristate H &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
                                         &trans                            &trans
                         &trans  &trans  &trans                            &trans  &trans  &trans

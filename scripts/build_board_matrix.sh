@@ -28,13 +28,14 @@ compile_board () {
     shield="$2"
     LOGFILE="$LOG_DIR/zmk_build_$artifact_name.log"
 
-    msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS -- -DZMK_CONFIG=$CONFIG_DIR $extra_args -Wno-dev > $LOGFILE 2>&1\n"
     msg_ "\n${GREEN}Building $1... ${NC}"
     if [ -d "$DOCKER_ZMK_DIR"/app/build/"$BUILD_DIR" ]; then
         msg_ "Building using existing cached directory: $BUILD_DIR"
+        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS"
         west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR"
     else
         msg_ "Building using a fresh directory: $BUILD_DIR"
+        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS -- -DZMK_CONFIG=$CONFIG_DIR $extra_args -Wno-dev > $LOGFILE 2>&1\n"
         west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR" -b "$1" "$WEST_OPTS" \
         -- -DZMK_CONFIG="$CONFIG_DIR" "$extra_args" -Wno-dev > "$LOGFILE" 2>&1
     fi
