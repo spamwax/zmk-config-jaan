@@ -31,7 +31,7 @@ compile_board () {
     msg_ "\n${GREEN}Building $1... ${NC}"
     if [ -d "$DOCKER_ZMK_DIR"/app/build/"$BUILD_DIR" ]; then
         msg_ "Building using existing cached directory: $BUILD_DIR"
-        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1"
+        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR"
         west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR"
     else
         msg_ "Building using a fresh directory: $BUILD_DIR"
