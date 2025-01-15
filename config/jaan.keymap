@@ -34,6 +34,7 @@
 #define TM_MRPH_DEL &tmb_mrph_del
 #define COMBO_TIMEOUT_MS 60
 #define THUMB_HOLDING_TYPE "balanced"
+// #include "unsupported-behaviors.dtsi"
 
 //
 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
@@ -49,7 +50,6 @@
 
 #define THUMB_REPEAT_DECAY 240 // "tap then hold" for key auto-repeat
 
-// #include "unsupported-behaviors.dtsi"
 // &mt {
 //     quick-tap-ms = <100>;
 //     global-quick-tap;
