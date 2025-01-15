@@ -2,11 +2,16 @@ manifest:
   remotes:
     - name: spamwax-zmk
       url-base: https://github.com/spamwax
+    - name: dhruvinsh
+      url-base: https://github.com/dhruvinsh
   projects:
     - name: zmk
       remote: spamwax-zmk
-      revision: main
+      revision: mainline
       clone-depth: 1
       import: app/west.yml
+    - name: zmk-tri-state
+      remote: dhruvinsh
+      revision: main
   self:
     path: config

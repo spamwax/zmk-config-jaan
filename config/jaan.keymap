@@ -542,6 +542,11 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            #binding-cells = <0>;
+            bindings = <&kp A>, <&kp B>, <&kt C>;
+        };
         fake_bind1: fake_node1 {
             compatible = "zmk,behavior-key-repeat";
             label = "fake_label1";
@@ -597,7 +602,7 @@
 &lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab     &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
-                                                                                 &kp TAB          &trans
+                                                                                 &kp TAB          &swapper
                                    &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &mmt LGUI SPACE  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
