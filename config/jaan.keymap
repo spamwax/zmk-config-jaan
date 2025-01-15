@@ -7,7 +7,6 @@
 // #include <dt-bindings/zmk/ext_power.h>
 // #include <dt-bindings/zmk/outputs.h>
 // #include "unsupported-behaviors.dtsi"
-
 // &num_word {
 //     layers = <NUM>;  // replace NUM by the location of numbers layer
 //     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
@@ -574,7 +573,6 @@
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
-
     };
 
     keymap {
@@ -611,9 +609,9 @@
         low {
             bindings = <
                     &trans  &trans  &trans                  &trans                  &trans                  &trans
-&trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                    &to 10  &trans
-&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word           &trans  &trans
-            &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))   &trans
+&trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
+&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word          &trans  &trans
+            &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                             &trans  &trans
                             &to 7   &to 6   &trans  &trans  &to 9                   &to 5
             >;
@@ -632,12 +630,12 @@
 
         windows {
             bindings = <
-                &trans  &trans  &trans                                            &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &fake_appswwin                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans
-                                        &trans                            &trans
-                        &trans  &trans  &trans                            &trans  &trans  &trans
+                &trans  &trans  &trans                          &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+                                        &trans          &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
             >;
         };
 
@@ -665,23 +663,23 @@
 
         numbers {
             bindings = <
-                          &trans     &trans     &trans                                                      &trans     &trans  &trans
-&trans          &trans    &trans     &trans     &trans     &kp LG(S)                         &kp STAR       &kp N7     &kp N8  &kp N9  &kp FSLH  &trans
-&kp LEFT_SHIFT  &trans    &trans     &trans     &trans     &fake_appswmac                    &none          &kp PLUS   &kp N4  &kp N5  &kp N6    &kp MINUS
-                &kp BSPC  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)                         &kp LS(LG(Z))  &kp COMMA  &kp N1  &kp N2  &kp N3
-                                                           &kp EQUAL                         &trans
-                                     &kp DOT    &trans     &trans                            &trans         &kp RET    &kp N0
+                          &trans     &trans     &trans                                    &trans     &trans  &trans
+&trans          &trans    &trans     &trans     &trans     &kp LG(S)       &kp STAR       &kp N7     &kp N8  &kp N9  &kp FSLH  &trans
+&kp LEFT_SHIFT  &trans    &trans     &trans     &trans     &fake_appswmac  &none          &kp PLUS   &kp N4  &kp N5  &kp N6    &kp MINUS
+                &kp BSPC  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)       &kp LS(LG(Z))  &kp COMMA  &kp N1  &kp N2  &kp N3
+                                                           &kp EQUAL       &trans
+                                     &kp DOT    &trans     &trans          &trans         &kp RET    &kp N0
             >;
         };
 
         cursor {
             bindings = <
-                       &trans      &trans        &trans                                                          &trans           &trans    &trans
-&trans      &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)                           &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
-&kp LSHIFT  &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac                      &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
-            &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))                       &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
-                                                               &trans                              &trans
-                                   &trans        &trans        &trans                              &trans        &trans           &trans
+                       &trans      &trans        &trans                                      &trans           &trans    &trans
+&trans      &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
+&kp LSHIFT  &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
+            &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
+                                                               &trans          &trans
+                                   &trans        &trans        &trans          &trans        &trans           &trans
             >;
         };
 
@@ -698,12 +696,12 @@
 
         macros {
             bindings = <
-                &trans     &trans         &trans                                                &trans    &trans        &trans
-&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)                         &trans   &nvim     &nvimqt       &trans  &trans  &trans
-&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac                    &zfs     &visave   &vinsertsave  &trans  &texit  &nvimt
-        &trans  &trans     &trans         &trans     &trans                            &viquit  &gitstat  &trans        &trans  &trans
-                                                     &trans                            &trans
-                           &trans         &trans     &trans                            &trans   &trans    &trans
+                &trans     &trans         &trans                              &trans    &trans        &trans
+&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &trans   &nvim     &nvimqt       &trans  &trans  &trans
+&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs     &visave   &vinsertsave  &trans  &texit  &nvimt
+        &trans  &trans     &trans         &trans     &trans          &viquit  &gitstat  &trans        &trans  &trans
+                                                     &trans          &trans
+                           &trans         &trans     &trans          &trans   &trans    &trans
             >;
 
             label = "git,nvim,zfs macros";
@@ -711,12 +709,12 @@
 
         system {
             bindings = <
-                     &trans        &trans      &trans                                &trans  &trans  &trans
-&trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 10      &trans
-&trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
-        &bootloader  &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
-                                                             &trans      &trans
-                                   &trans      &trans        &trans      &trans      &trans  &trans
+                     &trans        &trans      &trans                                 &trans  &trans  &trans
+&trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans       &trans      &trans  &trans  &trans      &tog 10      &trans
+&trans  &bt_0        &bt_1         &bt_2       &bt_3         &fake_bind1  &trans      &trans  &trans  &trans      &trans       &trans
+        &bootloader  &sys_reset    &trans      &trans        &bt_clrall   &bt_clrall  &trans  &trans  &sys_reset  &bootloader
+                                                             &trans       &trans
+                                   &trans      &trans        &trans       &trans      &trans  &trans
             >;
         };
 
@@ -733,34 +731,34 @@
 
         win_number {
             bindings = <
-                   &trans     &trans     &trans                                               &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &kp LC(S)                         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &fake_appswwin                    &trans  &trans  &trans  &trans  &trans  &trans
-        &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))                     &trans  &trans  &trans  &trans  &trans
-                                                    &trans                            &trans
-                              &trans     &trans     &trans                            &trans  &trans  &trans
+                   &trans     &trans     &trans                             &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
+        &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))   &trans  &trans  &trans  &trans  &trans
+                                                    &trans          &trans
+                              &trans     &trans     &trans          &trans  &trans  &trans
             >;
         };
 
         win_cursor {
             bindings = <
-                   &trans     &trans     &trans                                                   &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &kp LC(S)                           &trans    &trans  &trans  &trans  &trans   &trans
-&trans  &trans     &trans     &trans     &trans     &fake_appswwin                      &kp HOME  &trans  &trans  &trans  &kp END  &trans
-        &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))                       &trans    &trans  &trans  &trans  &trans
-                                                    &trans                              &trans
-                              &trans     &trans     &trans                              &trans    &trans  &trans
+                   &trans     &trans     &trans                               &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans    &trans  &trans  &trans  &trans   &trans
+&trans  &trans     &trans     &trans     &trans     &fake_appswwin  &kp HOME  &trans  &trans  &trans  &kp END  &trans
+        &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))   &trans    &trans  &trans  &trans  &trans
+                                                    &trans          &trans
+                              &trans     &trans     &trans          &trans    &trans  &trans
             >;
         };
 
         win_macro {
             bindings = <
-                &trans  &trans  &trans                                              &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp LC(S)                           &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &fake_appswwin                      &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans
-                                        &trans                              &trans
-                        &trans  &trans  &trans                              &trans  &trans  &trans
+                &trans  &trans  &trans                          &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+                                        &trans          &trans
+                        &trans  &trans  &trans          &trans  &trans  &trans
             >;
         };
 
