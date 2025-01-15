@@ -49,7 +49,7 @@
 
 #define THUMB_REPEAT_DECAY 240 // "tap then hold" for key auto-repeat
 
-#include "unsupported-behaviors.dtsi"
+// #include "unsupported-behaviors.dtsi"
 // &mt {
 //     quick-tap-ms = <100>;
 //     global-quick-tap;
