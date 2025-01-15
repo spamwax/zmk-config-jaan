@@ -6,11 +6,7 @@
 // #include <dt-bindings/zmk/bt.h>
 // #include <dt-bindings/zmk/ext_power.h>
 // #include <dt-bindings/zmk/outputs.h>
-// #include "unsupported-behaviors.dtsi"
-// &num_word {
-//     layers = <NUM>;  // replace NUM by the location of numbers layer
-//     continue-list = <BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL LSHFT LEFT RIGHT UP DOWN TAB>;
-// };
+#include "unsupported-behaviors.dtsi"
 
 #define BASE 0
 #define LOW 1
@@ -711,7 +707,7 @@
             bindings = <
                      &trans        &trans      &trans                                 &trans  &trans  &trans
 &trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans       &trans      &trans  &trans  &trans      &tog 10      &trans
-&trans  &bt_0        &bt_1         &bt_2       &bt_3         &fake_bind1  &trans      &trans  &trans  &trans      &trans       &trans
+&trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans       &trans      &trans  &trans  &trans      &trans       &trans
         &bootloader  &sys_reset    &trans      &trans        &bt_clrall   &bt_clrall  &trans  &trans  &sys_reset  &bootloader
                                                              &trans       &trans
                                    &trans      &trans        &trans       &trans      &trans  &trans
