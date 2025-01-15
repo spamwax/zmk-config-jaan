@@ -573,7 +573,7 @@
             compatible = "zmk,behavior-key-repeat";
             label = "fake_label1";
             #binding-cells = <0>;
-            usage-pages =
+            usage-pages = <HID_USAGE_KEY>;
             HID_USAGE_KEY;
         };
     };
