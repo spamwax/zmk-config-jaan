@@ -574,7 +574,6 @@
             label = "fake_label1";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
-            HID_USAGE_KEY;
         };
     };
 
@@ -601,7 +600,7 @@
 
             bindings = <
                      &kp NUMBER_2  &kp NUMBER_3               &kp NUMBER_4                                                     &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &fake_bind1      &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
+&lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &none            &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
                                                                                  &kp TAB          &trans
