@@ -6,6 +6,7 @@
 // #include <dt-bindings/zmk/bt.h>
 // #include <dt-bindings/zmk/ext_power.h>
 // #include <dt-bindings/zmk/outputs.h>
+// #include "unsupported-behaviors.dtsi"
 
 #define BASE 0
 #define LOW 1
@@ -526,30 +527,6 @@
             ignore-modifiers;
         };
 
-        fake_appswmac_behavior_tristate: fake_appswmac_behavior_tristate {
-            compatible = "zmk,behavior-sticky-key";
-            label = "Placeholder for tri-state. GUI+TAB macOS";
-            bindings = <&none>;
-            #binding-cells = <1>;
-            release-after-ms = <200>;
-        };
-
-        fake_appswwin_behavior_tristate: fake_appswwin_behavior_tristate {
-            compatible = "zmk,behavior-sticky-key";
-            label = "Placeholder for tri-state. ALT+TAB Win";
-            bindings = <&none>;
-            #binding-cells = <1>;
-            release-after-ms = <200>;
-        };
-
-        fake_num_word_behavior: fake_num_word_behavior {
-            compatible = "zmk,behavior-sticky-key";
-            label = "Placeholder for num-word-behavior";
-            bindings = <&none>;
-            #binding-cells = <1>;
-            release-after-ms = <200>;
-        };
-
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             label = "tap:stick shft, doubletap:capsword, hold:shft";
@@ -575,6 +552,28 @@
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
+
+        fake_appswmac: fake_appswmac_behavior_tristate {
+            compatible = "zmk,behavior-key-repeat";
+            label = "fake_label2";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY>;
+        };
+
+        fake_appswwin: fake_appswwin_behavior_tristate {
+            compatible = "zmk,behavior-key-repeat";
+            label = "fake_label3";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY>;
+        };
+
+        fake_num_word: fake_num_word_behavior {
+            compatible = "zmk,behavior-key-repeat";
+            label = "fake_label3";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY>;
+        };
+
     };
 
     keymap {
@@ -600,7 +599,7 @@
 
             bindings = <
                      &kp NUMBER_2  &kp NUMBER_3               &kp NUMBER_4                                                     &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &fake_bind1      &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
+&lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab     &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
                                                                                  &kp TAB          &trans
