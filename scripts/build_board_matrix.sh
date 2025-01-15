@@ -30,8 +30,15 @@ compile_board () {
 
     msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS -- -DZMK_CONFIG=$CONFIG_DIR $extra_args -Wno-dev > $LOGFILE 2>&1\n"
     msg_ "\n${GREEN}Building $1... ${NC}"
-    west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR" -b "$1" "$WEST_OPTS" \
+    if [ -d "$DOCKER_ZMK_DIR"/app/build/"$BUILD_DIR" ]; then
+        msg_ "Building using existing cached directory: $BUILD_DIR"
+        west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR"
+    else
+        msg_ "Building using a fresh directory: $BUILD_DIR"
+        west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR" -b "$1" "$WEST_OPTS" \
         -- -DZMK_CONFIG="$CONFIG_DIR" "$extra_args" -Wno-dev > "$LOGFILE" 2>&1
+    fi
+
     # shellcheck disable=2181
     if [[ $? -eq 0 ]]
     then
@@ -115,9 +122,11 @@ west zephyr-export >/dev/null
 artifact_name=${shield:+$shield-}${board}
 extra_args=${shield:+-DSHIELD="$shield"}
 BUILD_DIR="${artifact_name}_$SUFFIX"
-if [ -d "$DOCKER_ZMK_DIR"/app/build/"$BUILD_DIR" ]; then
+if [[ "$WEST_OPTS" == *"-p"* ]]; then
+    msg_ "♻ Removing old build directory before starting the process. (-p or --pristine)"
     rm -rf "$DOCKER_ZMK_DIR/app/build/$BUILD_DIR"
-    msg_ "♻ Removed old build directory before starting the build process.\n"
+else
+    msg_ "🔨 Not touching the build dir: $BUILD_DIR.\n"
 fi
 
 compile_board "$board" "$shield"
