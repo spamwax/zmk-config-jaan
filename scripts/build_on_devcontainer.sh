@@ -78,7 +78,7 @@ done
 # Set defaults
 # [[ -z $ZEPHYR_VERSION ]] && ZEPHYR_VERSION="3.5.0"
 
-local_config="$SCRIPT_DIR"/.. 
+local_config="$SCRIPT_DIR"/..
 local_zmk="$local_config"/../zmk
 local_output="$local_config/output"
 
@@ -123,8 +123,8 @@ USERNAME=$(id -un)
 USERUID=$(id -u)
 USERGID=$(id -g)
 USERNAME="hamid"
-USERUID="1000"
-USERGID="1000"
+USERUID="502"
+USERGID="502"
 
 DOCKER_ZMK_DIR="$local_zmk"
 DOCKER_CONFIG_DIR="$local_config"
@@ -184,6 +184,41 @@ fi
 MTHREAD=
 MTHREAD=$([[ $CLEAR_CACHE == false ]] && [[ -n $MULTITHREAD ]] && echo yes)
 readarray -t board_shields < <(yaml2json "$local_config"/build.yaml | jq -c -r '.include[]')
+
+# Check west.yml to see if any extra modules needs to be cloned and use
+OUTPUT=$("$SCRIPT_DIR"/get_extra_modules_from_west_yml.sh <(yaml2json "$CONFIG_DIR"/west.yml))
+EXIT_CODE=$?
+
+# Check the exit code and handle accordingly
+case $EXIT_CODE in
+  0|1)
+    echo "Cloning was successful, or no cloning was needed because repositories already exist."
+    ZMK_EXTRA_MODULES=""
+    # Base directory for project paths
+    BASE_DIR="$DOCKER_ZMK_DIR/modules"
+    for PROJECT_NAME in $OUTPUT; do
+      PROJECT_PATH="$BASE_DIR/$PROJECT_NAME"
+      if [[ -z "$ZMK_EXTRA_MODULES" ]]; then
+        ZMK_EXTRA_MODULES="$PROJECT_PATH" # First project, no comma
+      else
+        ZMK_EXTRA_MODULES="$ZMK_EXTRA_MODULES;$PROJECT_PATH" # Subsequent projects, add comma
+      fi
+    done
+    echo "All paths: $ZMK_EXTRA_MODULES"
+    ;;
+  2)
+    echo "No repositories found in JSON input."
+    unset ZMK_EXTRA_MODULES
+    ;;
+  3|4)
+    echo "An error occurred: Either cloning failed or the base directory could not be created."
+    exit $EXIT_CODE
+    ;;
+  *)
+    echo "An unexpected error occurred. Exit code: $EXIT_CODE"
+    exit $EXIT_CODE
+    ;;
+esac
 
 if [[ $MTHREAD == "yes" ]]; then
     counter=1

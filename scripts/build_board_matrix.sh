@@ -122,6 +122,16 @@ west zephyr-export >/dev/null
 
 artifact_name=${shield:+$shield-}${board}
 extra_args=${shield:+-DSHIELD="$shield"}
+
+if [ -n "${ZMK_EXTRA_MODULES}" ] && [ -n "$(echo "$ZMK_EXTRA_MODULES" | xargs)" ]; then
+    msg_ "🧩 Modules were setup in: $ZMK_EXTRA_MODULES"
+    extra_args="${extra_args:+$extra_args }-DZMK_EXTRA_MODULES=\"$ZMK_EXTRA_MODULES\""
+    # msg_ "Extra args: $extra_args"
+else
+    msg_ "❕ No module was setup!"
+    # msg_ "Extra args: $extra_args"
+fi
+
 BUILD_DIR="${artifact_name}_$SUFFIX"
 if [[ "$WEST_OPTS" == *"-p"* ]]; then
     msg_ "♻ Removing old build directory before starting the process. (-p or --pristine)"
