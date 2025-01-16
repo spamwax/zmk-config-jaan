@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/spamwax
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: spamwax-zmk
@@ -13,5 +15,11 @@ manifest:
     - name: zmk-tri-state
       remote: dhruvinsh
       revision: main
+    - name: zmk-num-word
+      remote: dhruvinsh
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: v0.1 # set to same version as zmk
   self:
     path: config
