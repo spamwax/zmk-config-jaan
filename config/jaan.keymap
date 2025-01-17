@@ -665,18 +665,18 @@
 
         numbers {
             bindings = <
-                          &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
-&trans          &trans    &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
-&kp LEFT_SHIFT  &kp LGUI  &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
-                &kp BSPC  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)       &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
-                                                           &kp LGUI        &kp SPACE
-                                     &kp DOT    &trans     &trans          &trans     &kp N0                &kp COMMA
+                           &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
+&trans          &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
+&kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
+                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
+                                                            &trans          &kp SPACE
+                                      &trans     &trans     &trans          &trans     &kp N0                &kp COMMA
             >;
         };
 
         cursor {
             bindings = <
-                       &trans      &trans        &trans                                      &trans           &trans    &trans
+                       &trans      &trans        &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &trans      &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
 &kp LSHIFT  &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
             &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
@@ -690,7 +690,7 @@
                         &trans  &trans    &trans                      &trans  &trans  &trans
 &trans          &trans  &trans  &trans    &trans     &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
 &kp LEFT_SHIFT  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
-                &trans  &trans  &trans    &trans     &trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans
+                &trans  &trans  &trans    &trans     &tog 8  &kp F10  &kp F1  &kp F2  &kp F3  &trans
                                                      &trans  &trans
                                 &trans    &trans     &trans  &trans   &trans  &trans
             >;
