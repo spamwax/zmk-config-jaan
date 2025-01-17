@@ -17,7 +17,7 @@ else
     echo "Devcontainer is not running. Starting it..."
     devcontainer up
 fi
-devcontainer exec -- ./scripts/build_on_devcontainer.sh --multithread >"$build_log_path" 2>&1 #--multithread -- -p #
+devcontainer-insiders exec -- ./scripts/build_on_devcontainer.sh --multithread >"$build_log_path" 2>&1 #--multithread -- -p #
 SCRIPT_EXIT_CODE=$?
 
 if [ $SCRIPT_EXIT_CODE -ne 0 ]; then
