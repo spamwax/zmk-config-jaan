@@ -17,7 +17,7 @@ manifest:
       clone-depth: 1
       import: app/west.yml
     - name: zmk-tri-state
-      remote: caksoylar
+      remote: spamwax-zmk
       revision: main
     - name: zmk-num-word
       remote: dhruvinsh
