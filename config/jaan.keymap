@@ -34,8 +34,8 @@
 #define TM_MRPH_DEL &tmb_mrph_del
 #define COMBO_TIMEOUT_MS 60
 #define THUMB_HOLDING_TYPE "balanced"
-// #include "unsupported-behaviors.dtsi"
 
+// #include "unsupported-behaviors.dtsi"
 //
 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
 // a thumb key to activate a layer.  Shorter holds are treated as taps.
@@ -547,6 +547,7 @@
         //     #binding-cells = <0>;
         //     bindings = <&kp A>, <&kp B>, <&kt C>;
         // };
+
         fake_bind1: fake_node1 {
             compatible = "zmk,behavior-key-repeat";
             label = "fake_label1";
@@ -631,12 +632,12 @@
 
         windows {
             bindings = <
-                &trans  &trans  &trans                          &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &qtwinnewtab    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-                                        &trans          &trans
-                        &trans  &trans  &trans          &trans  &trans  &trans
+                &trans  &trans  &trans                        &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &qtwinnewtab  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                                        &trans        &trans
+                        &trans  &trans  &trans        &trans  &trans  &trans
             >;
         };
 
@@ -664,12 +665,12 @@
 
         numbers {
             bindings = <
-                          &trans     &trans     &trans                                         &trans     &trans  &trans
-&trans          &trans    &trans     &trans     &trans          &kp LG(S)       &kp STAR       &kp N7     &kp N8  &kp N9  &kp FSLH  &trans
-&kp LEFT_SHIFT  &trans    &trans     &kp LALT   &kp LCTRL       &fake_appswmac  &none          &kp PLUS   &kp N4  &kp N5  &kp N6    &kp MINUS
-                &kp BSPC  &kp LG(Z)  &kp LG(X)  &kp LG(C)       &kp LG(V)       &kp LS(LG(Z))  &kp COMMA  &kp N1  &kp N2  &kp N3
-                                                                &kp EQUAL       &trans
-                                     &kp DOT    &trans          &trans          &trans         &kp RET    &kp N0
+                          &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
+&trans          &trans    &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
+&kp LEFT_SHIFT  &kp LGUI  &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
+                &kp BSPC  &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)       &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
+                                                           &kp LGUI        &kp SPACE
+                                     &kp DOT    &trans     &trans          &trans     &kp N0                &kp COMMA
             >;
         };
 
