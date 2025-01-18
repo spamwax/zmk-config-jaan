@@ -186,32 +186,26 @@ MTHREAD=$([[ $CLEAR_CACHE == false ]] && [[ -n $MULTITHREAD ]] && echo yes)
 readarray -t board_shields < <(yaml2json "$local_config"/build.yaml | jq -c -r '.include[]')
 
 # Check west.yml to see if any extra modules needs to be cloned and use
-OUTPUT=$("$SCRIPT_DIR"/get_extra_modules_from_west_yml.sh <(yaml2json "$CONFIG_DIR"/west.yml))
+OUTPUT=$("$SCRIPT_DIR"/get_extra_modules_from_west_yml.sh "$CONFIG_DIR"/west.yml)
 EXIT_CODE=$?
 
 # Check the exit code and handle accordingly
 case $EXIT_CODE in
-  0|1)
+  0)
     echo "Cloning was successful, or no cloning was needed because repositories already exist."
-    ZMK_EXTRA_MODULES=""
-    # Base directory for project paths
-    BASE_DIR="$DOCKER_ZMK_DIR/modules"
-    for PROJECT_NAME in $OUTPUT; do
-      PROJECT_PATH="$BASE_DIR/$PROJECT_NAME"
-      if [[ -z "$ZMK_EXTRA_MODULES" ]]; then
-        ZMK_EXTRA_MODULES="$PROJECT_PATH" # First project, no comma
-      else
-        ZMK_EXTRA_MODULES="$ZMK_EXTRA_MODULES;$PROJECT_PATH" # Subsequent projects, add comma
-      fi
-    done
+    ZMK_EXTRA_MODULES="$OUTPUT"
     echo "All paths: $ZMK_EXTRA_MODULES"
     ;;
-  2)
-    echo "No repositories found in JSON input."
+  1|4)
+    echo "Could not get any extra modules from west.yml!"
     unset ZMK_EXTRA_MODULES
     ;;
-  3|4)
-    echo "An error occurred: Either cloning failed or the base directory could not be created."
+  2)
+    echo "No valid projects found in west.yml file, including zmk."
+    exit $EXIT_CODE
+    ;;
+  3)
+    echo "Failed to clone a module from west.yml file."
     exit $EXIT_CODE
     ;;
   *)
