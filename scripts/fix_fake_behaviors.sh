@@ -20,4 +20,4 @@ INPUT_FILE="./config/jaan.keymap"
 # Copy the modified input file to the output file
 cp "$INPUT_FILE" "$OUTPUT_FILE"
 
-echo "Processed $INPUT_FILE, backup created as ${INPUT_FILE}.bak
+echo Processed $INPUT_FILE, backup created as ${INPUT_FILE}.bak
