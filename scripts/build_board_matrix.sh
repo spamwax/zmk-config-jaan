@@ -35,9 +35,9 @@ compile_board () {
         west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR"
     else
         msg_ "Building using a fresh directory: $BUILD_DIR"
-        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS -- -DZMK_CONFIG=$CONFIG_DIR $extra_args $extra_modules -Wno-dev > $LOGFILE 2>&1\n"
+        msg_ "west build -s $DOCKER_ZMK_DIR/app -d build/$BUILD_DIR -b $1 $WEST_OPTS -- -DZMK_CONFIG=$CONFIG_DIR ${extra_modules:+-DZMK_EXTRA_MODULES="$extra_modules"} $extra_args -Wno-dev > $LOGFILE 2>&1\n"
         west build -s "$DOCKER_ZMK_DIR/app" -d "build/$BUILD_DIR" -b "$1" "$WEST_OPTS" \
-        -- -DZMK_CONFIG="$CONFIG_DIR" "$extra_args" -Wno-dev > "$LOGFILE" 2>&1
+        -- -DZMK_CONFIG="$CONFIG_DIR" ${extra_modules:+-DZMK_EXTRA_MODULES="$extra_modules"} "$extra_args" -Wno-dev > "$LOGFILE" 2>&1
     fi
 
     # shellcheck disable=2181
@@ -125,9 +125,7 @@ extra_args=${shield:+-DSHIELD="$shield"}
 
 if [ -n "${ZMK_EXTRA_MODULES}" ] && [ -n "$(echo "$ZMK_EXTRA_MODULES" | xargs)" ]; then
     msg_ "🧩 Modules were setup in: $ZMK_EXTRA_MODULES"
-    extra_modules="-DZMK_EXTRA_MODULES=\"$ZMK_EXTRA_MODULES\""
-    # extra_args="${extra_args:+$extra_args }-DZMK_EXTRA_MODULES=\"$ZMK_EXTRA_MODULES\""
-    # msg_ "Extra args: $extra_args"
+    extra_modules="$ZMK_EXTRA_MODULES"
 else
     msg_ "❕ No module was setup!"
     # msg_ "Extra args: $extra_args"
