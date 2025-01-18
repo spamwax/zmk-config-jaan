@@ -186,7 +186,7 @@ MTHREAD=$([[ $CLEAR_CACHE == false ]] && [[ -n $MULTITHREAD ]] && echo yes)
 readarray -t board_shields < <(yaml2json "$local_config"/build.yaml | jq -c -r '.include[]')
 
 # Check west.yml to see if any extra modules needs to be cloned and use
-OUTPUT=$("$SCRIPT_DIR"/get_extra_modules_from_west_yml.sh "$CONFIG_DIR"/west.yml)
+OUTPUT=$("$SCRIPT_DIR"/get_extra_modules_from_west_yml.sh "$([[ "$WEST_OPTS" == *" -p "* ]] || [[ "$WEST_OPTS" == *" --pristine "* ]] && echo "-p")" "$CONFIG_DIR"/west.yml)
 EXIT_CODE=$?
 
 # Check the exit code and handle accordingly
