@@ -13,14 +13,14 @@ BASE_DIR="/workspace/zmk/modules"
 # Create the base directory if it doesn't exist
 if ! mkdir -p "$BASE_DIR"; then
   echo "🔴 Failed to create base directory: $BASE_DIR" >&2
-  exit 4 # Exit with error code 4 if mkdir fails
+  # exit 4 # Exit with error code 4 if mkdir fails
 fi
 
 # Process JSON and check if there are repositories to process
 REPO_LIST=$(echo "$JSON_INPUT" | jq -r '
   .manifest.projects[] as $project
   | .manifest.remotes[] | select(.name == $project.remote)
-  | { name: $project.name, url: (.["url-base"] + "/" + $project.name), clone_path: $project.remote }
+  | { name: $project.name, url: (.["url-base"] + "/" + $project.name), clone_path: ($project.remote + "/" + $project.name)}
   | select(.name != "zmk")
   | "\(.name) \(.url) \(.clone_path)"
 ')
@@ -42,20 +42,20 @@ while read -r PROJECT_NAME REPO_URL CLONE_PATH; do
   fi
 
   # Destination directory
-  DEST_DIR="$BASE_DIR/$CLONE_PATH/$PROJECT_NAME"
+  DEST_DIR="$BASE_DIR/$CLONE_PATH"
 
   # Clone the repository
   if [[ ! -d "$DEST_DIR" ]]; then
     echo "📗 Cloning $REPO_URL into $DEST_DIR..." >&2
     if git clone "$REPO_URL" "$DEST_DIR" >&2; then
-      CLONED_PROJECTS="${CLONED_PROJECTS:+$CLONED_PROJECTS }$PROJECT_NAME"
+      CLONED_PROJECTS="${CLONED_PROJECTS:+$CLONED_PROJECTS }$CLONE_PATH"
     else
       echo "🔴 Failed to clone $REPO_URL. Please check permissions or the repository URL." >&2
-      exit 3 # Exit immediately if cloning fails
+      # exit 3 # Exit immediately if cloning fails
     fi
   else
     # echo "Repository $PROJECT_NAME already exists in $DEST_DIR. Skipping." >&2
-    CLONED_PROJECTS="${CLONED_PROJECTS:+$CLONED_PROJECTS }$PROJECT_NAME"
+    CLONED_PROJECTS="${CLONED_PROJECTS:+$CLONED_PROJECTS }$CLONE_PATH"
   fi
 done <<< "$REPO_LIST"
 
