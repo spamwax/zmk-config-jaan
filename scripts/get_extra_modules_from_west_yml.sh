@@ -20,9 +20,9 @@ fi
 REPO_LIST=$(echo "$JSON_INPUT" | jq -r '
   .manifest.projects[] as $project
   | .manifest.remotes[] | select(.name == $project.remote)
-  | { name: $project.name, url: (.["url-base"] + "/" + $project.name) }
+  | { name: $project.name, url: (.["url-base"] + "/" + $project.name), clone_path: $project.remote }
   | select(.name != "zmk")
-  | "\(.name) \(.url)"
+  | "\(.name) \(.url) \(.clone_path)"
 ')
 
 if [[ -z "$REPO_LIST" ]]; then
@@ -34,7 +34,7 @@ fi
 CLONED_PROJECTS=""
 
 # Process each repository
-while read -r PROJECT_NAME REPO_URL; do
+while read -r PROJECT_NAME REPO_URL CLONE_PATH; do
   # Ensure the values are valid
   if [[ -z "$PROJECT_NAME" || -z "$REPO_URL" ]]; then
     echo "🥴 Skipping invalid entry: $PROJECT_NAME $REPO_URL" >&2
@@ -42,7 +42,7 @@ while read -r PROJECT_NAME REPO_URL; do
   fi
 
   # Destination directory
-  DEST_DIR="$BASE_DIR/$PROJECT_NAME"
+  DEST_DIR="$BASE_DIR/$CLONE_PATH/$PROJECT_NAME"
 
   # Clone the repository
   if [[ ! -d "$DEST_DIR" ]]; then
