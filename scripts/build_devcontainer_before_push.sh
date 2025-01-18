@@ -15,8 +15,9 @@ if [ -n "$RUNNING" ]; then
     echo "Devcontainer is already running, building the firmware..."
 else
     echo "Devcontainer is not running. Starting it..."
-    devcontainer up
+    devcontainer-insiders up
 fi
+
 devcontainer-insiders exec -- ./scripts/build_on_devcontainer.sh --multithread >"$build_log_path" 2>&1 #--multithread -- -p #
 SCRIPT_EXIT_CODE=$?
 
