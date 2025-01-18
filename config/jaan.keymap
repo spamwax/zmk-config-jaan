@@ -569,6 +569,20 @@
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
+
+        fake_nav_word: fake_nav_word_behavior {
+            compatible = "zmk,behavior-key-repeat";
+            label = "FAKE_NAV_WORD";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY>;
+        };
+
+        tab_nav_word: tab_nav_word {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap:tab, 2tap:nav_word";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&fake_nav_word>;
+        };
     };
 
     keymap {
@@ -597,7 +611,7 @@
 &lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab     &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
-                                                                                 &kp TAB          &trans
+                                                                                 &kp TAB          &tab_nav_word
                                    &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &mmt LGUI SPACE  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
