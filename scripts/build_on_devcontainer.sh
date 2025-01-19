@@ -265,13 +265,10 @@ if [[ $MTHREAD == "yes" ]]; then
         sleep 0.75
     done
 else
-    for pair in "${board_shields[@]}"; do
-        # Construct board/shield names
-        read -ra arr <<< "${pair//,/ }"
-        board=$(echo "${arr[0]}" | cut -d ':' -f 2 | sed 's/["{}}]//g')
-        shield=$(echo "${arr[1]}" | cut -d ':' -f 2 | sed 's/["{}}]//g')
+    while IFS= read -r line; do
+        board=$(echo "$line" | awk '{print $1}')
+        shield=$(echo "$line" | cut -d' ' -f2-)
         if [ $build_all = "no" ]; then
-            # if [[ " ${BOARDS[*]} " =~ " ${board} " ]]; then
             if [[ " ${BOARDS[*]} " == *" ${board} "* ]]; then
                 # shellcheck disable=2031
                 echo "✅ ${GREEN}Found${NC} requested \"$board${shield:+" ($shield)"}\" board!"; echo
@@ -284,11 +281,10 @@ else
         # shellcheck disable=2031
         printf "\n%s\n" "🚧 Run west to build \"$board MCU ${shield:+(${CYAN}$shield${NC} keyboard)}\""
         printf "╰┈┈➤"
-        shield=$(echo "${arr[1]}" | cut -d ':' -f 2 | sed 's/["{}}]//g')
         # shellcheck source=build_board_matrix.sh
         . "$SCRIPT_DIR"/build_board_matrix.sh
         printf "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n\n"
-    done
+    done < <(yq -r '.include[] | .board + " " + .shield' build.yaml)
 fi
 
     # printf "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n\n"

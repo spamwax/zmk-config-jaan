@@ -120,12 +120,12 @@ fi
 west zephyr-export >/dev/null
 
 
-artifact_name=${shield:+$shield-}${board}
-extra_args=${shield:+-DSHIELD="$shield"}
+artifact_name=$(echo "$shield" | tr ' ' '_')-$board
+extra_args=${shield:+-DSHIELD=$shield} # "-DSHIELD=$shield"
 
 if [ -n "${ZMK_EXTRA_MODULES}" ] && [ -n "$(echo "$ZMK_EXTRA_MODULES" | xargs)" ]; then
     msg_ "🧩 Modules were setup in: $ZMK_EXTRA_MODULES"
-    extra_modules="$ZMK_EXTRA_MODULES"
+    extra_modules=$ZMK_EXTRA_MODULES
 else
     msg_ "❕ No module was setup!"
     # msg_ "Extra args: $extra_args"
