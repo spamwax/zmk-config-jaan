@@ -6,3 +6,16 @@ output
 .khersak_id_rsa
 .env
 dts-bullshit/
+.direnv
+.west
+.build
+nice_view_sample.txt
+zephyr
+zmk
+modules/
+nice-view-gem/
+zmk-auto-layer/
+zmk-num-word/
+zmk-tri-state/
+
+
