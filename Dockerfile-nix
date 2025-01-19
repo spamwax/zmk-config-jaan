@@ -22,6 +22,7 @@ RUN wget https://github.com/koalaman/shellcheck/releases/download/stable/shellch
 
 RUN groupadd --gid $GROUP_ID $USER_NAME \
   && useradd --uid $USER_ID --gid $GROUP_ID -d /home/$USER_NAME -m $USER_NAME
+
 # RUN usermod -aG nix-users ${USERNAME}
 RUN usermod -aG sudo ${USERNAME}
 RUN chown -R ${USERNAME}:${USERGID} /home/${USERNAME}
@@ -41,35 +42,20 @@ RUN chsh -s /bin/bash root
 RUN curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --init none --no-confirm
 # Switch to bash for the build stage
 SHELL ["/bin/bash", "-c"]
-RUN [ -n "$BASH_VERSION" ] && echo "Using bash" || echo "Using sh" > ~/toot.txt
 RUN source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh && nix profile install nixpkgs#direnv nixpkgs#nix-direnv && \
     echo 'eval "$(direnv hook bash)"' >> ~/.bashrc && \
     mkdir -p ~/.config/direnv && echo 'source ~/.nix-profile/share/nix-direnv/direnvrc' >> ~/.config/direnv/direnvrc && \
     source ~/.bashrc
-# RUN echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
-# RUN mkdir -p ~/.config/direnv && echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> ~/.config/direnv/direnvrc
 WORKDIR /root
 RUN mkdir -p ~/.config/direnv && \
     echo '[whitelist]' > ~/.config/direnv/direnv.toml && \
     echo 'prefix = [ "/root/zmk-workspace" ]' >> ~/.config/direnv/direnv.toml
-RUN echo "ZMK_CONFIG_REPO: ${ZMK_CONFIG_REPO}" > $HOME/t.txt
-RUN if [ -z "$ZMK_CONFIG_REPO" ]; then \
-      ZMK_CONFIG_REPO=$(git remote get-url origin | sed -E 's|.*github\.com[:/]([^/]+)/([^/]+)\.git$|\1/\2|'); \
-    fi; \
-    echo "Clone ${ZMK_CONFIG_REPO}" >> $HOME/t.txt; \
-    git clone https://github.com/${ZMK_CONFIG_REPO} zmk-workspace
+RUN if [ -n "$ZMK_CONFIG_REPO" ]; then \
+      echo "Clone ${ZMK_CONFIG_REPO}" >> $HOME/cloned_repo.txt; \
+      git clone --branch nix-build https://github.com/${ZMK_CONFIG_REPO} zmk-workspace; \
+    fi
 WORKDIR /root
 CMD ["/bin/bash"]
 
-# WORKDIR /home/${USERNAME}
-# USER ${USERNAME}
+# RUN nix --extra-experimental-features nix-command --extra-experimental-features flakes profile install nixpkgs#direnv nixpkgs#nix-direnv
 
-# # nix shit from https://github.com/urob/zmk-config/tree/main
-# RUN nix profile install nixpkgs#direnv nixpkgs#nix-direnv
-# # RUN nix --extra-experimental-features nix-command --extra-experimental-features flakes profile install nixpkgs#direnv nixpkgs#nix-direnv
-
-# # Install the shell-hook
-# RUN   echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
-# # Enable nix-direnv (if installed in the previous step)
-# RUN   mkdir -p ~/.config/direnv
-# RUN   echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> ~/.config/direnv/direnvrc
