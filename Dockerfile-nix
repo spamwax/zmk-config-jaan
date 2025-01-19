@@ -39,6 +39,7 @@ RUN mkdir /.ccache \
   && chown -R ${USER_ID}:${GROUP_ID} /.cache
 RUN chsh -s /bin/bash root
 
+RUN apt install -y bsdextrautils
 RUN curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install linux --init none --no-confirm
 # Switch to bash for the build stage
 SHELL ["/bin/bash", "-c"]
