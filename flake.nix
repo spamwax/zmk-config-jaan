@@ -19,12 +19,12 @@
     devShells = forAllSystems (system: let
       pkgs = nixpkgs.legacyPackages.${system};
       zephyr = zephyr-nix.packages.${system};
-      keymap_drawer = pkgs.python3Packages.callPackage ./nix/keymap-drawer.nix { };
+      # keymap_drawer = pkgs.python3Packages.callPackage ./nix/keymap-drawer.nix { };
 
     in {
       default = pkgs.mkShellNoCC {
         packages = [
-          keymap_drawer
+          # keymap_drawer
 
           zephyr.pythonEnv
           (zephyr.sdk-0_16.override { targets = [ "arm-zephyr-eabi" ]; })
