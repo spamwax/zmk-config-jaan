@@ -21,6 +21,7 @@ fi
 
 $DEVCONTAINER_CMD
 SCRIPT_EXIT_CODE=$?
+printf "\n\n"
 
 if [ $SCRIPT_EXIT_CODE -ne 0 ]; then
     echo "Pre-push checks failed. Aborting push."

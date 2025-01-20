@@ -641,7 +641,7 @@
         };
 
         windows {
-            display-name = "windows";
+            display-name = "win";
             bindings = <
                 &trans  &trans  &trans                        &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &qtwinnewtab  &trans  &trans  &trans  &trans  &trans  &trans
@@ -653,7 +653,7 @@
         };
 
         mirror {
-            display-name = "mirror";
+            display-name = "mir";
             bindings = <
                 &trans  &trans  &trans                  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -665,7 +665,7 @@
         };
 
         symbols {
-            display-name = "symbols";
+            display-name = "sym";
             bindings = <
                    &trans      &trans          &trans                                &trans     &trans    &trans
 &trans  &kp LBKT   &kp RBKT    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SQT    &trans    &kp AT     &kp FSLH  &kp EXCLAMATION  &trans     &trans
@@ -677,19 +677,19 @@
         };
 
         numbers {
-            display-name = "numbers";
+            display-name = "numb";
             bindings = <
                            &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
-&trans          &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
+&trans          &trans     &trans &out OUT_TOG &out OUT_BLE &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
 &kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
-                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
+                &kp LG(Z)  &bt_1      &bt_0      &bt_clrall &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
                                                             &trans          &kp SPACE
                                       &trans     &trans     &trans          &trans     &kp N0                &kp COMMA
             >;
         };
 
         cursor {
-            display-name = "cursor";
+            display-name = "curs";
             bindings = <
                        &trans      &trans        &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &trans      &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
@@ -701,7 +701,7 @@
         };
 
         functions {
-            display-name = "functions";
+            display-name = "func";
             bindings = <
                         &trans  &trans    &trans                      &trans  &trans  &trans
 &trans          &trans  &trans  &trans    &trans     &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
@@ -713,7 +713,7 @@
         };
 
         macros {
-            display-name = "macros";
+            display-name = "macr";
             bindings = <
                 &trans     &trans         &trans                              &trans    &trans        &trans
 &trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &trans   &nvim     &nvimqt       &trans  &trans  &trans
@@ -727,7 +727,7 @@
         };
 
         system {
-            display-name = "system";
+            display-name = "sys";
             bindings = <
                      &trans        &trans      &trans                                &trans  &trans  &trans
 &trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 10      &trans
@@ -739,7 +739,7 @@
         };
 
         common_shortcuts {
-            display-name = "common_shortcuts";
+            display-name = "csho";
             bindings = <
                 &trans     &trans     &trans                        &trans  &trans  &trans
 &trans  &trans  &trans     &kp LG(R)  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
@@ -751,7 +751,7 @@
         };
 
         win_number {
-            display-name = "win_number";
+            display-name = "wnum";
             bindings = <
                    &trans     &trans     &trans                             &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
@@ -763,7 +763,7 @@
         };
 
         win_cursor {
-            display-name = "win_cursor";
+            display-name = "wcur";
             bindings = <
                    &trans     &trans     &trans                               &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans    &trans  &trans  &trans  &trans   &trans
@@ -775,7 +775,7 @@
         };
 
         win_macro {
-            display-name = "win_macro";
+            display-name = "wmac";
             bindings = <
                 &trans  &trans  &trans                          &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
@@ -787,7 +787,7 @@
         };
 
         win_shortcuts {
-            display-name = "win_shortcuts";
+            display-name = "wsho";
             bindings = <
                 &trans     &trans     &trans                        &trans  &trans  &trans
 &trans  &trans  &trans     &kp LC(R)  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
@@ -799,7 +799,7 @@
         };
 
         qwerty {
-            display-name = "qwerty";
+            display-name = "qwer";
             bindings = <
                 &trans  &trans  &trans                  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
