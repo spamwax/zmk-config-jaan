@@ -542,7 +542,7 @@
             keep-mods = <(MOD_LGUI)>;
         };
 
-        fake_bind1: fake_node1 {
+        fake_bind1: fake_node1_behavior {
             compatible = "zmk,behavior-key-repeat";
             label = "fake_label1";
             #binding-cells = <0>;
