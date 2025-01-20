@@ -139,7 +139,7 @@ if [[ -n $REMOTE_DOCKER ]]; then
       && printf "\t%s\n" "Set it like ${CYAN}export DOCKER_HOST=ssh://khersak${NC}" \
       && printf "\t%s\n" "${RED}Aborting!${NC}" \
       && exit
-  local_config="$SCRIPT_DIR"/.. 
+  local_config="$SCRIPT_DIR"/..
   local_zmk="$local_config"/../zmk
   local_output="$local_config/output"
   USERNAME="hamid"

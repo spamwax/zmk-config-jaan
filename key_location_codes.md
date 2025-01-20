@@ -1,6 +1,6 @@
 ### KEY POSITIONS
 
-These numbers should be used in ZMK's `key-position` fields, such as the ones in *"zmk,combos"*
+These numbers should be used in ZMK's `key-position` fields, such as the ones in _"zmk,combos"_
 
 ```
   ╭────────────────────────╮      ╭────────────────────────╮

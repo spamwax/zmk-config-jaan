@@ -17,6 +17,7 @@ Other locations can be specified with `--host-zmk-dir` or by changing the
 default location for `HOST_ZMK_DIR` inside the script.
 
 For example, to build against my `main-3.2` branch, run:
+
 ```bash
 cd "$HOME"
 git clone https://github.com/urob/zmk
@@ -30,6 +31,7 @@ By default the build script will look for the zmk-config repo in
 changing the default location for `HOST_CONFIG_DIR` inside the script.
 
 For example, to use my zmk-config repo, run:
+
 ```bash
 cd "$HOME"
 git clone https://github.com/urob/zmk-config
@@ -60,7 +62,7 @@ overwritten with the `-b` option.
 
 If using docker/podman, the script will pull down the required dependencies the first
 time it is used. The script will automatically detect whether the build
-requirement have changed, and will only re-download the dependencies if needed. 
+requirement have changed, and will only re-download the dependencies if needed.
 
 In order to easily switch between multiple ZMK branches that have different
 build requirements, one can specify the desired Zephyr version using the `-v`
@@ -82,6 +84,7 @@ One can pass custom options to `west` by preluding them with `--`.
 
 For example, to build my boards using Zephyr version 3.2 in sudo mode and pass
 the "pristine" option to west, run:
+
 ```bash
 zmk_build.sh -s -v 3.2 -- -p
 ```
@@ -92,10 +95,11 @@ See the script for a full set of options.
 
 The docker container can be entered interactively using with all the necessary
 mounts using: The script shares a build environment with the build script
-(again indexed by Zephyr versions). 
+(again indexed by Zephyr versions).
 
 For example, to start an interactive Docker session in sudo mode using Zephyr
 version 3.2, run:
+
 ```bash
 zmk_run_docker.sh -s -v 3.2
 ```

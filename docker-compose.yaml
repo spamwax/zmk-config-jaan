@@ -1,6 +1,5 @@
 # version: "3.9"
 services:
-
   # Fix Ownership of Build Directory
   # Thanks to Bug in Docker itself
   # We need to use steps like this
