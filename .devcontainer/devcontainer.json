@@ -1,67 +1,66 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-docker-compose
 {
-	"name": "Jaan on ZMK",
-	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
-	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
-	"dockerComposeFile": [
-		"../docker-compose.yaml",
-		"docker-compose.yml"
-	],
-	// "initializeCommand": "docker buildx build --build-arg zmk_type=dev --build-arg zmk_tag=3.2 --build-arg USERNAME=hamid --build-arg USERUID=1000 --build-arg USERGID=1000 -t private/zmk -f Dockerfile .",
-	// The 'service' property is the name of the service for the container that VS Code should
-	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
-	// "service": "change-vol-ownership",
-	"service": "build",
-	// "runServices": [
-	//	"build"
-	//],
-	"onCreateCommand": "cp /run/secrets/khersak_ssh_key /home/${USERNAME}/.ssh/id_rsa && chmod 400 /home/${USERNAME}/.ssh/id_rsa",
-	// The optional 'workspaceFolder' property is the path VS Code should open by default when
-	// connected. This is typically a file mount in .devcontainer/docker-compose.yml
-	"workspaceFolder": "/workspace/zmk-config",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Uncomment the next line if you want start specific services in your Docker Compose config.
-	// "runServices": [],
-	// Uncomment the next line if you want to keep your containers running after VS Code shuts down.
-	// "shutdownAction": "none",
-	// Uncomment the next line to run commands after the container is created.
-	"postCreateCommand": "git config --global core.excludesfile /home/${USERNAME}/.gitignore_global",
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"rogalmic.bash-debug",
-				"timonwong.shellcheck",
-				"mads-hartmann.bash-ide-vscode",
-				"plorefice.devicetree",
-				"dustinsanders.an-old-hope-theme-vscode",
-				"idleberg.hopscotch",
-				"plorefice.devicetree"
-			],
-			"settings": {
-				"editor.fontFamily": "LilexNFM-Regular",
-				"editor.fontSize": 13.5,
-				// Controls the line height. Use 0 to compute the lineHeight from the fontSize.
-				"editor.lineHeight": 20,
-				//"editor.letterSpacing": 0.1,
-				"editor.fontLigatures": true,
-				"editor.formatOnSave": true,
-				// "shellcheck.executablePath": "/home/${USERNAME}/.local/share/nvim/mason/bin/shellcheck",
-				"shellcheck.customArgs": [
-					"--external-sources"
-				],
-				"files.insertFinalNewline": true,
-				"terminal.integrated.scrollback": 50000,
-				// "workbench.colorTheme": "Monokai Pro (Filter Machine)"
-				"workbench.colorTheme": "Hopscotch",
-				"shellcheck.executablePath": "/usr/bin/shellcheck"
-			}
-		}
-	}
-	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "devcontainer"
+  "name": "Jaan on ZMK",
+  // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+  // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
+  "dockerComposeFile": ["../nix-docker-compose.yaml", "docker-compose.yml"],
+  // "initializeCommand": "docker buildx build --build-arg zmk_type=dev --build-arg zmk_tag=3.2 --build-arg USERNAME=hamid --build-arg USERUID=1000 --build-arg USERGID=1000 -t private/zmk -f Dockerfile .",
+  // The 'service' property is the name of the service for the container that VS Code should
+  // use. Update this value and .devcontainer/docker-compose.yml to the real service name.
+  // "service": "change-vol-ownership",
+  "service": "build",
+  // "runServices": [
+  //  "build"
+  //],
+  "onCreateCommand": "cp /run/secrets/khersak_ssh_key /home/${USERNAME}/.ssh/id_rsa && chmod 400 /home/${USERNAME}/.ssh/id_rsa",
+  // The optional 'workspaceFolder' property is the path VS Code should open by default when
+  // connected. This is typically a file mount in .devcontainer/docker-compose.yml
+  "workspaceFolder": "/root/zmk-workspace",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  // "features": {},
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+  // Uncomment the next line if you want start specific services in your Docker Compose config.
+  // "runServices": [],
+  // Uncomment the next line if you want to keep your containers running after VS Code shuts down.
+  // "shutdownAction": "none",
+  // Uncomment the next line to run commands after the container is created.
+  "postCreateCommand": "git config --global core.excludesfile /home/${USERNAME}/.gitignore_global",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rogalmic.bash-debug",
+        "timonwong.shellcheck",
+        "mads-hartmann.bash-ide-vscode",
+        "plorefice.devicetree",
+        "dustinsanders.an-old-hope-theme-vscode",
+        "idleberg.hopscotch",
+        "plorefice.devicetree"
+      ],
+      "settings": {
+        "editor.fontFamily": "LilexNFM-Regular",
+        "editor.fontSize": 13.5,
+        // Controls the line height. Use 0 to compute the lineHeight from the fontSize.
+        "editor.lineHeight": 20,
+        //"editor.letterSpacing": 0.1,
+        "editor.fontLigatures": true,
+        "editor.formatOnSave": true,
+        // "shellcheck.executablePath": "/home/${USERNAME}/.local/share/nvim/mason/bin/shellcheck",
+        "shellcheck.customArgs": ["--external-sources"],
+        "files.insertFinalNewline": true,
+        "terminal.integrated.scrollback": 50000,
+        // "workbench.colorTheme": "Monokai Pro (Filter Machine)"
+        "workbench.colorTheme": "Hopscotch",
+        "shellcheck.executablePath": "/usr/bin/shellcheck",
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.env.linux": {
+          "PATH": "/home/hamid/.nix-profile/bin:/usr/local/bin:${env:PATH}"
+        }
+      }
+    }
+    // Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "devcontainer"
+  }
 }
