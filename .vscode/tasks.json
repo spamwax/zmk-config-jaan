@@ -1,0 +1,75 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Check Environment",
+      "type": "shell",
+      "command": "env",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "devcontainer: 'just'",
+      "type": "shell",
+      "command": "direnv",
+      "args": ["exec", ".", "just", "build", "${input:targetSelection}"],
+      "problemMatcher": [],
+      "options": {
+        "env": {
+          "PATH": "/nix/store/swfwll0dr9h8bndaz1shp0ayb6qgk9i3-just-1.38.0/bin:${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always"
+      },
+      "dependsOn": "update-recipes"
+    },
+    {
+      "label": "update-recipes",
+      "type": "shell",
+      "command": "./update_tasks_inputs.sh",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "showReuseMessage": false,
+        "clear": true
+      },
+      "options": {
+        "shell": {
+          "executable": "direnv",
+          "args": ["exec", ".", "/bin/bash", "-c"]
+        }
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "recipeSelection",
+      "type": "pickString",
+      "description": "Select a recipe to run:",
+      "options": [
+        "build",
+        "clean",
+        "clean-all",
+        "clean-nix",
+        "default",
+        "init",
+        "list",
+        "test",
+        "update",
+        "upgrade-sdk"
+      ]
+    },
+    {
+      "id": "targetSelection",
+      "type": "pickString",
+      "description": "Select a target to build:",
+      "options": ["all", "nice_nano_v2,jaan_left", "nice_nano_v2,jaan_right"]
+    }
+  ]
+}
