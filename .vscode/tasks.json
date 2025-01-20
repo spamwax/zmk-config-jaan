@@ -2,6 +2,46 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "devcontainer: 'just build all'",
+      "type": "shell",
+      "command": "direnv",
+      "args": [
+        "exec",
+        ".",
+        "just",
+        "build",
+        "all"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "devcontainer: 'just clean'",
+      "type": "shell",
+      "command": "direnv",
+      "args": [
+        "exec",
+        ".",
+        "just",
+        "clean"
+      ],
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent"
+      }
+    },
+    {
+      "label": "devcontainer: 'just build clean'",
+      "type": "shell",
+      "dependsOn": [
+        "devcontainer: 'just clean'",
+        "devcontainer: 'just build all'"
+      ],
+      "dependsOrder": "sequence"
+    },
+    {
       "label": "Run 'just'",
       "type": "shell",
       "dependsOn": [
