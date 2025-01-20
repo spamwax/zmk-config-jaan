@@ -20,7 +20,8 @@ repos:
           (?x)^(
               .git/COMMIT_EDITMSG|
               CHANGELOG.md|
-              .release-please-manifest.json
+              .release-please-manifest.json|
+              .vscode/tasks.json
           )$
         # Workaround for https://github.com/pre-commit/mirrors-prettier/issues/29
         additional_dependencies:
@@ -33,7 +34,7 @@ repos:
         pass_filenames: false
         args: [-c, B5.min-length=0, --ignore, "B6,T3"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v5.0.0
     hooks:
       - id: trailing-whitespace
       - id: check-yaml
