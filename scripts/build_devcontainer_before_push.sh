@@ -3,6 +3,7 @@
 PATH="$PATH:$HOME/Library/Application Support/Code - Insiders/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin"
 # Define your project path (absolute path to your workspace folder)
 PROJECT_PATH="$PWD"
+DEVCONTAINER_CMD="devcontainer-insiders exec -- direnv exec . just build all"
 echo "Running pre-push checks..."
 
 # Remove the previous build log
@@ -18,7 +19,7 @@ else
     devcontainer-insiders up
 fi
 
-devcontainer-insiders exec -- ./scripts/build_on_devcontainer.sh --multithread >"$build_log_path" 2>&1 #--multithread -- -p #
+$DEVCONTAINER_CMD
 SCRIPT_EXIT_CODE=$?
 
 if [ $SCRIPT_EXIT_CODE -ne 0 ]; then
