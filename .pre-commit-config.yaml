@@ -21,7 +21,8 @@ repos:
               .git/COMMIT_EDITMSG|
               CHANGELOG.md|
               .release-please-manifest.json|
-              .vscode/tasks.json
+              .vscode/tasks.json|
+              .devcontainer/devcontainer.json|
           )$
         # Workaround for https://github.com/pre-commit/mirrors-prettier/issues/29
         additional_dependencies:

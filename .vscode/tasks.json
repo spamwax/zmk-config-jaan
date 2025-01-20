@@ -2,48 +2,40 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Check Environment",
+      "label": "Run 'just'",
       "type": "shell",
-      "command": "env",
+      "dependsOn": [
+        "Task A - Recipe Selection",
+        "Task B - Target Selection"
+      ],
+      "dependsOrder": "sequence",
       "problemMatcher": [],
       "presentation": {
         "reveal": "always"
       }
     },
     {
-      "label": "devcontainer: 'just'",
+      "label": "Task A - Recipe Selection",
       "type": "shell",
-      "command": "direnv",
-      "args": ["exec", ".", "just", "build", "${input:targetSelection}"],
+      "command": "./scripts/taskA_wrapper.sh",
+      "args": [
+        "${input:recipeSelection}"
+      ],
       "problemMatcher": [],
-      "options": {
-        "env": {
-          "PATH": "/nix/store/swfwll0dr9h8bndaz1shp0ayb6qgk9i3-just-1.38.0/bin:${env:PATH}"
-        }
-      },
       "presentation": {
-        "reveal": "always"
-      },
-      "dependsOn": "update-recipes"
+        "reveal": "silent"
+      }
     },
     {
-      "label": "update-recipes",
+      "label": "Task B - Target Selection",
       "type": "shell",
-      "command": "./update_tasks_inputs.sh",
+      "command": "./scripts/taskB_wrapper.sh",
+      "args": [
+        "${input:targetSelection}"
+      ],
       "problemMatcher": [],
       "presentation": {
-        "reveal": "silent",
-        "showReuseMessage": false,
-        "clear": true
-      },
-      "options": {
-        "shell": {
-          "executable": "direnv",
-          "args": ["exec", ".", "/bin/bash", "-c"]
-        }
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
+        "reveal": "always"
       }
     }
   ],
@@ -51,10 +43,10 @@
     {
       "id": "recipeSelection",
       "type": "pickString",
-      "description": "Select a recipe to run:",
+      "description": "Select a recipe:",
       "options": [
-        "build",
         "clean",
+        "build",
         "clean-all",
         "clean-nix",
         "default",
@@ -67,9 +59,13 @@
     },
     {
       "id": "targetSelection",
-      "type": "pickString",
-      "description": "Select a target to build:",
-      "options": ["all", "nice_nano_v2,jaan_left", "nice_nano_v2,jaan_right"]
+      "type": "command",
+      "command": "shellCommand.execute",
+      "args": {
+        "command": "./scripts/fetch_targets.sh",
+        "cwd": "${workspaceFolder}",
+        "warnOnStderr": false
+      }
     }
   ]
 }
