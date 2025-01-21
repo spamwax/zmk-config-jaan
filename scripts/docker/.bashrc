@@ -103,3 +103,4 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export DIRENV_LOG_FORMAT=

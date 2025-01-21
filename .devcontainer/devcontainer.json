@@ -51,11 +51,14 @@
         //"editor.letterSpacing": 0.1,
         "editor.fontLigatures": true,
         "editor.formatOnSave": true,
+        "editor.selectionHighlight": true,
+        "files.insertFinalNewline": true,
         // "shellcheck.executablePath": "/home/${USERNAME}/.local/share/nvim/mason/bin/shellcheck",
         "shellcheck.customArgs": [
           "--external-sources"
         ],
-        "files.insertFinalNewline": true,
+        "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+        "vscode-neovim.neovimInitVimPaths.darwin": "/root/.config/nvim/init.vim",
         "terminal.integrated.scrollback": 50000,
         // "workbench.colorTheme": "Monokai Pro (Filter Machine)"
         "workbench.colorTheme": "Hopscotch",

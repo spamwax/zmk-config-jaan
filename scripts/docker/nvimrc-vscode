@@ -1,0 +1,218 @@
+"┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+"┃ ======================= [ Sensible Vim Settings ] ======================= ┃
+"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+" syntax on
+" let g:python3_host_prog = '/Volumes/manzel/hamid/.pyenv/versions/py3neovim/bin/python3'
+
+set shell=/usr/bin/bash
+if !1 | finish | endif
+
+if has('vim_starting')
+    if &compatible
+        set nocompatible
+    endif
+endif
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'tpope/vim-unimpaired'
+    Plug 'terryma/vim-expand-region'
+    Plug 'tpope/vim-surround'
+    Plug 'smoka7/hop.nvim'
+    Plug 'tpope/vim-commentary'
+
+call plug#end()
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=2
+set expandtab
+set smarttab
+
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+
+set nrformats-=octal
+
+set timeout timeoutlen=400 ttimeoutlen=100
+
+set incsearch
+
+set laststatus=2
+set ruler
+set showcmd
+set wildmenu
+
+if !&scrolloff
+    set scrolloff=2
+endif
+if !&sidescrolloff
+    set sidescrolloff=2
+endif
+set display+=lastline
+
+set encoding=utf-8
+
+set sessionoptions-=options
+
+
+
+
+set hidden
+set undofile                " Save undo's after file closes
+set undodir=~/.config/nvim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+set backupdir=~/.config/nvim/backup
+
+set title                " change the terminal's title
+set visualbell           " don't beep
+set noerrorbells         " don't beep
+set mouse=a
+set textwidth=0
+set cpoptions+=$
+
+
+set ignorecase          " case insensitive searching
+set smartcase           " but become case sensitive if you type upperca
+
+set matchpairs+=<:>     " specially for html
+set switchbuf=usetab,useopen
+
+set wildignore=*.swp,*.bak,*.pyc,*.class,node_modules*,*.ipr,*.iws,build*,makebuild*,ninjabuild*,xcode*
+
+" More natural splitting
+set splitbelow
+set splitright
+
+" Update more frequently
+set updatetime=1000
+"
+" treat underscore-separated words as separate words
+" set iskeyword-=_
+
+" show the cursor position below each window
+set ruler
+
+" Turn auto-wrapping off
+set formatoptions-=t
+set formatoptions-=c
+
+autocmd FileType crontab setlocal nowritebackup
+
+
+"┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+"┃ ========================== [ My Mappings ] ==========================
+"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+let mapleader = ","
+
+"easier invokation of command mode
+nnoremap : ;
+nnoremap ; :
+
+" Better <esc>
+imap jj <esc>
+
+
+" Disable arrow keys!!!
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Close the current window
+" nnoremap [c <C-W>c
+
+" Delete the current buffer
+" nnoremap <leader>c :bd<CR>
+
+" Quickly edit/reload the vimrc file
+nmap <silent> <leader>sv :so ~/.dotfiles/.nvimrc-vscode<CR>
+
+" Toggle highlighting of search term
+noremap <F4> :set hlsearch!<CR>
+
+" paste mode toggle (needed when using autoindent/smartindent)
+" nmap <F10> :set invpaste<CR>
+
+" Faster saving
+nnoremap <space>w :w<CR>
+
+" Copy file name of the current buffer
+nnoremap <silent> <F6> :let @+=expand("%:p")<CR>
+
+" Continuosly ident/unindent blocks of code in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" Preserve indentation while pasting text from the clipboard
+noremap <leader><leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" Swap v and <c-v>
+nnoremap v <C-V>
+nnoremap <C-V> v
+vnoremap v <C-V>
+vnoremap <C-V> v
+
+" Write content of file with sudo privileges.
+" cmap w!! w !sudo tee %
+
+" Close current buffer and without loosing current window/split
+nnoremap <leader>x :bp\|bd #<CR>
+" Prepopulate substitute command with word under cursor
+nnoremap <F3> :%s/\<<C-r><C-w>\>/
+
+" mapping for moving lines up and down
+nnoremap ß :m .+1<CR>==
+nnoremap ƒ :m .-2<CR>==
+inoremap ß <Esc>:m .+1<CR>==gi
+inoremap ƒ <Esc>:m .-2<CR>==gi
+vnoremap ˚ :m '>+1<CR>gv=gv
+vnoremap ø :m '<-2<CR>gv=gv
+
+" let the arrow keys change window
+noremap <up> <C-w>k
+noremap <down> <C-w>j
+noremap <left> <C-w>h
+noremap <right> <C-w>l
+
+
+"┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+"┃ ======================= [ easy-motion ] =======================
+"┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+lua << EOF
+require("hop").setup({ keys = "htsaeincldwuoyrmfgkx" })
+
+vim.api.nvim_set_keymap('n', 'f', "<cmd>lua require'hop'.hint_char1()<cr>", {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>w', "<cmd>lua require'hop'.hint_words({ current_line_only = true })<cr>", {noremap=true})
+
+vim.api.nvim_set_keymap('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('v', 'f', "<cmd>lua require'hop'.hint_char1({ current_line_only = false, inclusive_jump = true })<cr>", {noremap=true})
+
+vim.api.nvim_set_keymap('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = -1 })<cr>", {noremap=true})
+
+vim.api.nvim_set_keymap('n', '<leader>k', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('n', '<leader>j', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('v', '<leader>k', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR })<cr>", {noremap=true})
+vim.api.nvim_set_keymap('v', '<leader>j', "<cmd>lua require'hop'.hint_lines_skip_whitespace({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR })<cr>", {noremap=true})
+EOF
+
+
+nmap <A-/> gcc
+nmap ÷ gcc
+vmap <A-/> gc
+vmap ÷ gc
+
+
+autocmd FileType rust set commentstring=//\ %s
