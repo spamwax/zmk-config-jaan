@@ -544,35 +544,35 @@
 
         fake_bind1: fake_node1_behavior {
             compatible = "zmk,behavior-key-repeat";
-            label = "fake_label1";
+            label = "label1";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_appswmac: fake_appswmac_behavior_tristate {
             compatible = "zmk,behavior-key-repeat";
-            label = "fake_label2";
+            label = "label2";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_appswwin: fake_appswwin_behavior_tristate {
             compatible = "zmk,behavior-key-repeat";
-            label = "fake_label3";
+            label = "label3";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_num_word: fake_num_word_behavior {
             compatible = "zmk,behavior-key-repeat";
-            label = "fake_label4";
+            label = "label4";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_nav_word: fake_nav_word_behavior {
             compatible = "zmk,behavior-key-repeat";
-            label = "FAKE_NAV_WORD";
+            label = "label5";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
@@ -621,7 +621,7 @@
             bindings = <
                     &trans  &trans  &trans                  &trans                  &trans                  &trans
 &trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
-&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6             &trans  &trans
+&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
             &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                             &trans  &trans
                             &to 7   &to 6   &trans  &trans  &to 9                   &to 5
