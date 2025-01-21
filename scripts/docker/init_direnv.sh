@@ -6,5 +6,5 @@ source ~/.bashrc >/dev/null 2>&1
 cd /root/zmk-workspace || exit
 
 eval "$(direnv export bash)"
-direnv exec . just init >/dev/null 2>&1
+direnv exec . just init # >/dev/null 2>&1
 # direnv exec . just build all

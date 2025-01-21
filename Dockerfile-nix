@@ -16,8 +16,8 @@ RUN mkdir -p ~/.config/direnv && \
     echo '[whitelist]' > ~/.config/direnv/direnv.toml && \
     echo 'prefix = [ "/root/zmk-workspace" ]' >> ~/.config/direnv/direnv.toml
 
-# RUN --mount=type=bind,source=$PWD,target=/root/zmk-workspace,rw \
-#     /root/zmk-workspace/scripts/docker/init_direnv.sh
+RUN --mount=type=bind,source=$PWD,target=/root/zmk-workspace,rw \
+    /root/zmk-workspace/scripts/docker/init_direnv.sh
 
 # COPY ./scripts/docker/nvimrc-vscode /root/.nvimrc-vscode
 RUN mkdir -p ~/.config/nvim/{autoload,undo,backup} && \

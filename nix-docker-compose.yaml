@@ -22,12 +22,12 @@ services:
         git
     volumes:
       - /tmp:/tmp
-      - zmk_config_root:/root/zmk-workspace
+      - /Volumes/manzel/hamid/projects/hobbies/zmk_firmwares/zmk-config-jaan:/root/zmk-workspace:rw
+      # - zmk_config_root:/root/zmk-workspace
 secrets:
   khersak_ssh_key:
     file: ${HOST_CONFIG_DIR}/.khersak_id_rsa
-
-volumes:
-  zmk_config_root:
-    name: zmk-config-jaan
-    external: true
+# volumes:
+#   zmk_config_root:
+#     name: zmk-config-jaan
+#     external: true
