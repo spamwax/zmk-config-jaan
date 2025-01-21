@@ -39,7 +39,8 @@
         "devcontainer: 'just clean'",
         "devcontainer: 'just build all'"
       ],
-      "dependsOrder": "sequence"
+      "dependsOrder": "sequence",
+      "problemMatcher": []
     },
     {
       "label": "Run 'just'",

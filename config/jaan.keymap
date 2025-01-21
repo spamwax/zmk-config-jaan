@@ -564,17 +564,19 @@
         };
 
         fake_num_word: fake_num_word_behavior {
-            compatible = "zmk,behavior-key-repeat";
+            compatible = "zmk,behavior-sticky-key";
             label = "label4";
-            #binding-cells = <0>;
-            usage-pages = <HID_USAGE_KEY>;
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
         };
 
         fake_nav_word: fake_nav_word_behavior {
-            compatible = "zmk,behavior-key-repeat";
+            compatible = "zmk,behavior-sticky-key";
             label = "label5";
-            #binding-cells = <0>;
-            usage-pages = <HID_USAGE_KEY>;
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
         };
 
         tab_nav_word: tab_nav_word {
