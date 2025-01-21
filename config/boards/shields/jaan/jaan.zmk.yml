@@ -8,6 +8,7 @@ exposes: [i2c_oled] # this is from juriform36
 features:
   - keys
   - display
+  - studio
 siblings:
   - jaan_left
   - jaan_right

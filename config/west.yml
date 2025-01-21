@@ -19,9 +19,9 @@ manifest:
     - name: zmk-tri-state
       remote: spamwax-zmk
       revision: main
-    - name: zmk-num-word
-      remote: dhruvinsh
-      revision: main
+    # - name: zmk-num-word
+    #   remote: dhruvinsh
+    #   revision: main
     - name: zmk-auto-layer
       remote: urob
       revision: v0.1 # set to same version as zmk
