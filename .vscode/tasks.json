@@ -63,7 +63,7 @@
       ],
       "problemMatcher": [],
       "presentation": {
-        "reveal": "silent"
+        "reveal": "always"
       }
     },
     {
