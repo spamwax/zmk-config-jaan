@@ -682,9 +682,9 @@
             display-name = "numb";
             bindings = <
                            &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
-&trans          &trans     &trans &out OUT_TOG &out OUT_BLE &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
+&trans          &trans     &trans     &trans     &transe    &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
 &kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
-                &kp LG(Z)  &bt_1      &bt_0      &bt_clrall &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
+                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
                                                             &trans          &kp SPACE
                                       &trans     &trans     &trans          &trans     &kp N0                &kp COMMA
             >;
