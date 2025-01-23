@@ -503,14 +503,14 @@
 
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
+            flavor = THUMB_HOLDING_TYPE;
             label = "Thumb &mo + Backspace morph";
-            bindings = <&mo>, <&shft_bspc>;
-
+            tapping-term-ms = <THUMB_HOLDING_TIME>;
+            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            //global-quick-tap; // no typing streak
+            retro-tap; // allow slow (hold-like) taps
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <170>;
-            quick-tap-ms = <240>;
-            retro-tap;
+            bindings = <&mo>, <&shft_bspc>;
         };
 
         skq: sticky_key_quick_release {
@@ -609,7 +609,7 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-                     &kp NUMBER_2  &kp NUMBER_3               &kp NUMBER_4                                                     &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
+                     &kp NUMBER_2  &kp NUMBER_2               &kp NUMBER_4                                                     &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
 &lt 11 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab     &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &kp ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA        &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &lt 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
