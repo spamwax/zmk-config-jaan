@@ -129,7 +129,7 @@
 
         combo_close_windows {
             bindings = <&kp LC ( W )>;
-            key-positions = <4 33>;
+            key-positions = <34 23>;
             layers = <3 1 4 5 6 7 8 9>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
@@ -360,6 +360,13 @@
             #binding-cells = <0>;
             bindings = <&bt BT_CLR &bt BT_SEL 0 &bt BT_CLR &bt BT_SEL 1 &bt BT_CLR &bt BT_SEL 2 &bt BT_CLR &bt BT_SEL 3 &bt BT_CLR>;
         };
+
+        vim_select_all: vim_select_all {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT_BRACKET) &kp G &kp G &kp LS(V) &kp LS(G)>;
+            label = "VIM_SELECT_ALL";
+        };
     };
 
     behaviors {
@@ -503,11 +510,13 @@
 
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
-            flavor = THUMB_HOLDING_TYPE;
+            flavor =
+            THUMB_HOLDING_TYPE;
             label = "Thumb &mo + Backspace morph";
             tapping-term-ms = <THUMB_HOLDING_TIME>;
             quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
             //global-quick-tap; // no typing streak
+
             retro-tap; // allow slow (hold-like) taps
             #binding-cells = <2>;
             bindings = <&mo>, <&shft_bspc>;
