@@ -10,14 +10,14 @@
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
-            ignored-key-positions = <14 15>;// Ignort SHIFT key position so we can go back in the window list
+            ignored-key-positions = <18 29>;// Ignort SHIFT key position so we can go back in the window list
             // timeout-ms = <1000>;
         };
         appswwin: app_switch_win {
             compatible = "zmk,behavior-tri-state";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <14 15>;// Ignort SHIFT key position so we can go back in the window list
+            ignored-key-positions = <18 29>;// Ignort SHIFT key position so we can go back in the window list
             // timeout-ms = <1000>;
         };
         nav_word: nav_word {
