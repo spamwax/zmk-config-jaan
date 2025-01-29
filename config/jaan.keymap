@@ -510,11 +510,10 @@
 
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
-            flavor;
-            THUMB_HOLDING_TYPE;
+            flavor = "balanced";
             label = "Thumb &mo + Backspace morph";
-            tapping-term-ms = <THUMB_HOLDING_TIME>;
-            quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+            tapping-term-ms = <170>;
+            quick-tap-ms = <240>; // enable repeat
             //global-quick-tap; // no typing streak
 
             retro-tap; // allow slow (hold-like) taps
