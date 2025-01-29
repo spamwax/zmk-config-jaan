@@ -417,7 +417,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            quick-tap-ms = <170>;
+            quick-tap-ms = <210>;
             require-prior-idle-ms = <150>;
             flavor = "balanced";
             tapping-term-ms = <170>;
@@ -510,7 +510,7 @@
 
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
-            flavor =
+            flavor;
             THUMB_HOLDING_TYPE;
             label = "Thumb &mo + Backspace morph";
             tapping-term-ms = <THUMB_HOLDING_TIME>;
@@ -520,6 +520,8 @@
             retro-tap; // allow slow (hold-like) taps
             #binding-cells = <2>;
             bindings = <&mo>, <&shft_bspc>;
+
+            hold-trigger-key-positions = <30 31 32 33 34 35 12 13 14 15 16 17 24 25 26 27 28 29 35 36 37 38 39 3 4 5 41 46 47>;
         };
 
         skq: sticky_key_quick_release {
@@ -594,6 +596,18 @@
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&fake_nav_word 7>;
         };
+
+        modtap: mdtap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mod tap with hold preferred";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <240>;
+            require-prior-idle-ms = <170>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <170>;
+        };
     };
 
     keymap {
@@ -618,12 +632,12 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-                     &kp NUMBER_2  &kp NUMBER_2               &kp NUMBER_4                                                   &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&ltl 5 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab   &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &ltr 5 ESC
-&hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA      &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
-              &kp F  &kp X         &kp C                      &kp R              &ltl 8 FSLH    &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
-                                                                                 &ltl 11 SPACE  &tab_nav_word
-                                   &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &mmt LGUI TAB  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
+                     &kp NUMBER_2  &kp NUMBER_2               &kp NUMBER_4                                                      &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
+&ltl 5 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab      &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &ltr 5 ESC
+&hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA         &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
+              &kp F  &kp X         &kp C                      &kp R              &ltl 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
+                                                                                 &ltl 11 SPACE     &tab_nav_word
+                                   &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &modtap LGUI TAB  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
 
