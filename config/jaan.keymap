@@ -520,7 +520,7 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&shft_bspc>;
 
-            hold-trigger-key-positions = <30 31 32 33 34 35 12 13 14 15 16 17 24 25 26 27 28 29 35 36 37 38 39 3 4 5 41 46 47>;
+            hold-trigger-key-positions = <30 31 32 33 34 35 12 13 14 15 16 17 24 25 26 27 28 29 35 36 37 38 39 3 4 5 41 46 47 23 11>;
         };
 
         skq: sticky_key_quick_release {
