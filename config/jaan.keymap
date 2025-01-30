@@ -740,7 +740,7 @@
             display-name = "macr";
             bindings = <
                 &trans     &trans         &trans                              &trans    &trans        &trans
-&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &trans   &nvim     &nvimqt       &trans  &trans  &trans
+&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &vim_select_all   &nvim     &nvimqt       &trans  &trans  &trans
 &trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs     &visave   &vinsertsave  &trans  &texit  &nvimt
         &trans  &trans     &trans         &trans     &trans          &viquit  &gitstat  &trans        &trans  &trans
                                                      &trans          &trans
