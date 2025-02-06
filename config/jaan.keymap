@@ -631,7 +631,7 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-                     &kp NUMBER_2  &kp NUMBER_2               &kp NUMBER_4                                                      &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
+                     &kp NUMBER_2  &kp N3                     &kp NUMBER_4                                                      &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
 &ltl 5 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab      &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &ltr 5 ESC
 &hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA         &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
               &kp F  &kp X         &kp C                      &kp R              &ltl 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
@@ -645,7 +645,7 @@
             bindings = <
                     &trans  &trans  &trans                  &trans                  &trans                  &trans
 &trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
-&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
+&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word N6       &trans  &trans
             &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                             &trans  &trans
                             &to 7   &to 6   &trans  &trans  &to 9                   &to 5
@@ -679,7 +679,7 @@
         mirror {
             display-name = "mir";
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
+                &trans  &to 0   &trans                  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -691,7 +691,7 @@
         symbols {
             display-name = "sym";
             bindings = <
-                   &trans      &trans          &trans                                &trans     &trans    &trans
+                   &trans      &to 0           &trans                                &trans     &trans    &trans
 &trans  &kp LBKT   &kp RBKT    &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp SQT    &trans    &kp AT     &kp FSLH  &kp EXCLAMATION  &trans     &trans
 &trans  &kp CARET  &kp DOLLAR  &kp MINUS       &kp PLUS         &kp COLON  &kp BSLH  &kp STAR   &kp LPAR  &kp RPAR         &kp EQUAL  &trans
         &kp PRCNT  &kp HASH    &trans          &kp AMPS         &kp TILDE  &kp PIPE  &kp QMARK  &trans    &trans           &trans
@@ -703,7 +703,7 @@
         numbers {
             display-name = "numb";
             bindings = <
-                           &trans     &trans     &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
+                           &trans     &to 0      &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
 &kp LG(GRAVE)   &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
 &kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
                 &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp DOT    &kp N1                &kp N2      &kp N3                 &kp EQUAL
@@ -715,7 +715,7 @@
         cursor {
             display-name = "curs";
             bindings = <
-                          &trans      &trans        &trans                                      &kp LA(A)        &trans    &kp LA(I)
+                          &trans      &to 0         &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &kp LG(GRAVE)  &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
 &kp LSHIFT     &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
                &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
@@ -727,7 +727,7 @@
         functions {
             display-name = "func";
             bindings = <
-                        &trans  &trans    &trans                      &trans  &trans  &trans
+                        &trans  &to 0     &trans                      &trans  &trans  &trans
 &trans          &trans  &trans  &trans    &trans     &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
 &kp LEFT_SHIFT  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
                 &trans  &trans  &trans    &trans     &tog 8  &kp F10  &kp F1  &kp F2  &kp F3  &trans
@@ -739,12 +739,12 @@
         macros {
             display-name = "macr";
             bindings = <
-                &trans     &trans         &trans                              &trans    &trans        &trans
-&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &vim_select_all   &nvim     &nvimqt       &trans  &trans  &trans
-&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs     &visave   &vinsertsave  &trans  &texit  &nvimt
-        &trans  &trans     &trans         &trans     &trans          &viquit  &gitstat  &trans        &trans  &trans
+                &trans     &to 0          &trans                                      &trans    &trans        &trans
+&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &vim_select_all  &nvim     &nvimqt       &trans  &trans  &trans
+&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs             &visave   &vinsertsave  &trans  &texit  &nvimt
+        &trans  &trans     &trans         &trans     &trans          &viquit          &gitstat  &trans        &trans  &trans
                                                      &trans          &trans
-                           &trans         &trans     &trans          &trans   &trans    &trans
+                           &trans         &trans     &trans          &trans           &trans    &trans
             >;
 
             label = "git,nvim,zfs macros";
@@ -753,7 +753,7 @@
         system {
             display-name = "sys";
             bindings = <
-                     &trans        &trans      &trans                                &trans  &trans  &trans
+                     &trans        &to 0       &trans                                &trans  &trans  &trans
 &trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 10      &trans
 &trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
         &bootloader  &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
@@ -765,12 +765,12 @@
         common_shortcuts {
             display-name = "csho";
             bindings = <
-                &trans     &trans     &trans                        &trans  &trans  &trans
-&trans  &trans  &trans     &kp LG(R)  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LG(H)  &kp LG(P)  &kp LG(N)  &kp LG(O)  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans     &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans
-                                                 &trans     &trans
-                           &trans     &trans     &trans     &trans  &trans  &trans
+                   &trans     &to 0      &trans                        &trans  &trans  &trans
+&trans  &trans     &trans     &kp LG(H)  &kp LG(P)  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(O)  &kp LG(S)  &kp LG(T)  &kp LG(N)  &kp LG(I)  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans     &trans     &trans     &kp LG(R)  &trans     &trans  &trans  &trans  &trans  &trans
+                                                    &trans     &trans
+                              &trans     &trans     &trans     &trans  &trans  &trans
             >;
         };
 
@@ -813,12 +813,12 @@
         win_shortcuts {
             display-name = "wsho";
             bindings = <
-                &trans     &trans     &trans                        &trans  &trans  &trans
-&trans  &trans  &trans     &kp LC(R)  &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &kp LC(H)  &kp LC(P)  &kp LC(N)  &kp LC(O)  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans     &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans
-                                                 &trans     &trans
-                           &trans     &trans     &trans     &trans  &trans  &trans
+                   &trans     &trans     &trans                        &trans  &trans  &trans
+&trans  &trans     &trans     &kp LC(H)  &kp LC(P)  &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(O)  &kp LC(S)  &kp LC(T)  &kp LC(N)  &kp LC(I)  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans     &trans     &trans     &kp LC(R)  &trans     &trans  &trans  &trans  &trans  &trans
+                                                    &trans     &trans
+                              &trans     &trans     &trans     &trans  &trans  &trans
             >;
         };
 
