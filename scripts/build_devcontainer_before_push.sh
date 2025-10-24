@@ -16,7 +16,13 @@ if [ -n "$RUNNING" ]; then
     echo "Devcontainer is already running, building the firmware..."
 else
     echo "Devcontainer is not running. Starting it..."
-    devcontainer-insiders up
+    _up=$(devcontainer-insiders up --log-level=debug)
+    _up_exit_code=$?
+    if [ $_up_exit_code -ne 0 ]; then
+        echo "Failed to start the devcontainer. Exiting."
+        echo ">> $_up"
+        exit $_up_exit_code
+    fi
 fi
 
 $DEVCONTAINER_CMD
