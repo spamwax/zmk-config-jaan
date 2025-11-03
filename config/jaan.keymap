@@ -832,12 +832,12 @@
         qwerty {
             display-name = "qwer";
             bindings = <
-                &trans  &trans  &trans                  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                        &trans  &trans
-                        &trans  &trans  &trans  &trans  &trans  &trans
+               &trans  &trans      &trans                                          &trans       &trans      &trans
+&trans  &kp Q  &kp W   &kp E       &kp R        &kp T     &kp Y                    &kp U        &kp I       &kp O    &mmt LS(LA(LCTRL)) P  &trans
+&trans  &kp A  &kp S   &hl LALT D  &hl LCTRL F  &kp G     &kp H                    &hr RCTRL J  &hr RALT K  &kp L    &kp SEMI              &trans
+        &kp Z  &kp X   &kp C       &kp V        &ltl 8 B  &mmt LS(LA(LC(LGUI))) N  &kp M        &kp COMMA   &kp DOT  &kp FSLH
+                                                &trans    &trans
+                       &trans      &trans       &trans    &trans                   &trans       &trans
             >;
         };
 
