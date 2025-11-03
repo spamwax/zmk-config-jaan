@@ -725,7 +725,7 @@
                           &trans      &to 0         &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &kp LG(GRAVE)  &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
 &kp LSHIFT     &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
-               &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &trans        &kp LA(B)        &trans    &kp LA(F)    &trans
+               &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &kp HOME      &kp LA(B)        &trans    &kp LA(F)    &kp END
                                                                   &trans          &trans
                                       &trans        &trans        &trans          &trans        &trans           &trans
             >;
