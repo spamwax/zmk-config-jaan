@@ -71,7 +71,7 @@
             bindings = <&kp LG ( LSHIFT )>;
             key-positions = <10 22>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <0 1 4 5 6>;
+            layers = <1 4 5 6 2>;
             slow-release;
         };
 
@@ -81,7 +81,7 @@
             bindings = <&kp RG ( RSHIFT )>;
             key-positions = <13 25>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <0 1 4 5 6>;
+            layers = <1 4 5 6 2>;
             slow-release;
         };
 
@@ -110,7 +110,7 @@
         combo_quit_macos {
             bindings = <&kp LG ( Q )>;
             key-positions = <33 34>;
-            layers = <0 1 4 5 6 7 8 9>;
+            layers = <1 4 5 6 7 8 9 2>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -120,7 +120,7 @@
         combo_close_macos {
             bindings = <&kp LG ( W )>;
             key-positions = <23 34>;
-            layers = <0 1 4 5 6 7 8 9>;
+            layers = <1 4 5 6 7 8 9 2>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -140,7 +140,7 @@
         combo_selectall_macos {
             bindings = <&kp LG ( A )>;
             key-positions = <11 23>;
-            layers = <0 1 4 5 6 7 8 9>;
+            layers = <1 4 5 6 7 8 9 2>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -161,7 +161,7 @@
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <0 1 3 4 5 6 7 8 9>;
+            layers = <1 3 4 5 6 7 8 9 2>;
             slow-release;
         };
 
@@ -171,19 +171,11 @@
             bindings = <&kp SPACE>;
             key-positions = <10 11>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <0 1 3 4 5 6 7 8 9>;
+            layers = <1 3 4 5 6 7 8 9 2>;
             slow-release;
         };
 
         // LOW layer
-
-        combo_layer_low {
-            bindings = <&sl LOW>;
-            key-positions = <43 44>;
-            timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <0 1 3 4 5 6 7 8 9>;
-            slow-release;
-        };
 
         combo_quit_win {
             bindings = <&kp LA(F4)>;
@@ -621,10 +613,10 @@
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        base {
+        game {
             // ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
 
-            display-name = "base";
+            display-name = "game";
 
             // ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
             //              ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┓   ┏━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
@@ -638,12 +630,12 @@
             //                                      ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛   ┗━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━┛
 
             bindings = <
-                     &kp NUMBER_2  &kp N3                     &kp NUMBER_4                                                      &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&ltl 5 GRAVE  &kp W  &kp G         &kp M                      &kp L              &qtmacnewtab      &kp SEMICOLON                &kp U             &kp O                              &kp B              &mmt LS(LA(LCTRL)) V  &ltr 5 ESC
-&hl LSHIFT Z  &kp D  &kp S         &hl LALT T                 &hl LCTRL N        &kp COMMA         &kp PERIOD                   &hr RCTRL A       &hr RALT E                         &kp I              &hr RGUI H            &hr RSHIFT Q
-              &kp F  &kp X         &kp C                      &kp R              &ltl 8 FSLH       &mmt LS(LA(LC(LGUI))) UNDER  &kp P             &kp Y                              &kp J              &kp K
-                                                                                 &ltl 11 SPACE     &tab_nav_word
-                                   &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &modtap LGUI TAB  &tmb 1 ENTER                 &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
+                      &kp NUMBER_2  &kp N3        &kp NUMBER_4                                     &kp LEFT_BRACKET  &kp ESCAPE                    &kp RIGHT_BRACKET
+&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &to 2
+&kp TAB        &kp D  &kp S         &kp T         &kp N         &kp H           &kp PERIOD         &hr RCTRL A       &hr RALT E                    &kp I              &hr RGUI H            &hr RSHIFT Q
+               &kp F  &kp X         &kp C         &kp R         &kp Z           &kp DOUBLE_QUOTES  &kp P             &kp Y                         &kp J              &kp K
+                                                                &kp LEFT_SHIFT  &tmb 6 COMMA
+                                    &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 1 ENTER       &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
 
@@ -659,15 +651,15 @@
             >;
         };
 
-        game {
-            display-name = "game";
+        mac {
+            display-name = "mac";
             bindings = <
-                       &trans  &trans    &trans                                        &trans     &trans         &trans
-&kp BACKSPACE  &trans  &trans  &trans    &trans     &kp B           &kp FSLH           &trans     &trans         &trans  &trans  &to 0
-&kp TAB        &kp D   &kp S   &kp T     &kp N      &kp H           &trans             &trans     &trans         &trans  &trans  &trans
-               &trans  &trans  &trans    &trans     &kp Z           &kp DOUBLE_QUOTES  &trans     &trans         &trans  &trans
-                                                    &kp LEFT_SHIFT  &trans
-                               &kp LALT  &kp LCTRL  &kp SPACE       &trans             &kp SPACE  &ltr 4 ESCAPE
+                     &kp NUMBER_2  &kp NUMBER_3                  &kp NUMBER_4                                                                   &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
+&ltl 5 GRAVE  &kp W  &kp G         &kp M                         &kp L              &qtmacnewtab          &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &ltr 5 ESCAPE
+&hl LSHFT Z   &kp D  &kp S         &hl LEFT_ALT T                &hl LCTRL N        &kp COMMA             &kp PERIOD                            &hr RCTRL A       &hr RIGHT_ALT E                    &kp I              &hr RIGHT_GUI H       &hr RSHFT Q
+              &kp F  &kp X         &kp C                         &kp R              &ltl 8 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
+                                                                                    &ltl 11 SPACE         &tab_nav_word
+                                   &tmb_hold_preferred 7 ESCAPE  &tmb_mrph_del 6 0  &modtap LEFT_GUI TAB  &tmb 1 ENTER                          &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
 
