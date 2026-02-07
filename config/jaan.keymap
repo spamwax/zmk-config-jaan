@@ -659,7 +659,7 @@
 &hl LSHFT Z   &kp D  &kp S         &hl LEFT_ALT T                &hl LCTRL N        &kp COMMA             &kp PERIOD                            &hr RCTRL A       &hr RIGHT_ALT E                    &kp I              &hr RIGHT_GUI H       &hr RSHFT Q
               &kp F  &kp X         &kp C                         &kp R              &ltl 8 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
                                                                                     &ltl 11 SPACE         &tab_nav_word
-                                   &tmb_hold_preferred 7 ESCAPE  &tmb_mrph_del 6 0  &modtap LEFT_GUI TAB  &tmb 1 ENTER                          &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
+                                   &tmb_hold_preferred 7 ESCAPE  &tmb_mrph_del 6 0  &modtap LEFT_GUI TAB  &tmb 17 ENTER                         &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
             >;
         };
 
@@ -830,6 +830,18 @@
         &kp Z  &kp X   &kp C       &kp V        &ltl 8 B  &mmt LS(LA(LC(LGUI))) N  &kp M        &kp COMMA   &kp DOT  &kp FSLH
                                                 &trans    &trans
                        &trans      &trans       &trans    &trans                   &trans       &trans
+            >;
+        };
+
+        layer_17 {
+            display-name = "low";
+            bindings = <
+                    &trans  &trans  &trans                  &trans                  &trans                  &to 16
+&trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
+&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
+            &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
+                                            &trans  &trans
+                            &to 7   &to 6   &trans  &trans  &to 9                   &to 5
             >;
         };
 
