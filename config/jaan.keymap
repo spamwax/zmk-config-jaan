@@ -631,10 +631,10 @@
 
             bindings = <
                       &kp NUMBER_2  &kp N3        &kp NUMBER_4                                     &kp LEFT_BRACKET  &kp ESCAPE                    &kp RIGHT_BRACKET
-&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 16 ESCAPE
+&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 3 ESCAPE
 &kp TAB        &kp D  &kp S         &kp T         &kp N         &kp H           &kp PERIOD         &hr RCTRL A       &hr RALT E                    &kp I              &hr RGUI H            &hr RSHIFT Q
                &kp F  &kp X         &kp C         &kp R         &kp Z           &kp DOUBLE_QUOTES  &kp P             &kp Y                         &kp J              &kp K
-                                                                &kp LEFT_SHIFT  &tmb 5 COMMA
+                                                                &kp LEFT_SHIFT  &tmb 3 COMMA
                                     &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 16 ENTER      &tmb 8 SPACE      &tmb_hold_preferred 4 DELETE
             >;
         };
@@ -704,7 +704,7 @@
             bindings = <
                           &trans      &to 0         &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &kp LG(GRAVE)  &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
-&kp LSHIFT     &trans     &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
+&kp LSHIFT     &kp LGUI   &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
                &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &kp HOME      &kp LA(B)        &trans    &kp LA(F)    &kp END
                                                                   &trans          &trans
                                       &trans        &trans        &trans          &trans        &trans           &trans
@@ -714,12 +714,12 @@
         functions {
             display-name = "func";
             bindings = <
-                        &trans  &to 0     &trans                      &trans  &trans  &trans
-&trans          &trans  &trans  &trans    &trans     &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
-&kp LEFT_SHIFT  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
-                &trans  &trans  &trans    &trans     &tog 7  &kp F10  &kp F1  &kp F2  &kp F3  &trans
-                                                     &trans  &trans
-                                &trans    &trans     &trans  &trans   &trans  &trans
+                        &trans     &to 0     &trans                      &kp F13  &kp F14  &kp F15
+&trans          &trans  &trans     &trans    &trans     &trans  &kp F12  &kp F7   &kp F8   &kp F9   &trans  &trans
+&kp LEFT_SHIFT  &trans  &kp LCTRL  &kp LALT  &kp LCTRL  &trans  &kp F11  &kp F4   &kp F5   &kp F6   &trans  &trans
+                &trans  &trans     &trans    &trans     &tog 7  &kp F10  &kp F1   &kp F2   &kp F3   &trans
+                                                        &trans  &trans
+                                   &trans    &trans     &trans  &trans   &trans   &trans
             >;
         };
 
