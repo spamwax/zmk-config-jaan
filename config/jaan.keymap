@@ -592,7 +592,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "tap:tab, 2tap:nav_word";
             #binding-cells = <0>;
-            bindings = <&kp TAB>, <&fake_nav_word N6>;
+            bindings = <&kp TAB>, <&fake_nav_word 6>;
         };
 
         modtap: mdtap_hold {
