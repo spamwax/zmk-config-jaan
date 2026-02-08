@@ -130,7 +130,7 @@
         combo_close_windows {
             bindings = <&kp LC ( W )>;
             key-positions = <34 23>;
-            layers = <2 3 4 5 6 7 8>;
+            layers = <2>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -150,7 +150,7 @@
         combo_selectall_windows {
             bindings = <&kp LC ( A )>;
             key-positions = <11 23>;
-            layers = <2 3 4 5 6 7 8>;
+            layers = <2>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -592,7 +592,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "tap:tab, 2tap:nav_word";
             #binding-cells = <0>;
-            bindings = <&kp TAB>, <&fake_nav_word 7>;
+            bindings = <&kp TAB>, <&fake_nav_word N6>;
         };
 
         modtap: mdtap_hold {
