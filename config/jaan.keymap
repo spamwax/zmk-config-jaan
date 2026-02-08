@@ -71,7 +71,7 @@
             bindings = <&kp LG ( LSHIFT )>;
             key-positions = <10 22>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <1 4 5 6 2>;
+            layers = <3 4 5 1>;
             slow-release;
         };
 
@@ -81,7 +81,7 @@
             bindings = <&kp RG ( RSHIFT )>;
             key-positions = <13 25>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <1 4 5 6 2>;
+            layers = <3 4 5 1>;
             slow-release;
         };
 
@@ -91,7 +91,7 @@
             bindings = <&kp LC ( LSHIFT )>;
             key-positions = <10 22>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <3>;
+            layers = <2>;
             slow-release;
         };
 
@@ -101,7 +101,7 @@
             bindings = <&kp RC ( RSHIFT )>;
             key-positions = <13 25>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <3>;
+            layers = <2>;
             slow-release;
         };
 
@@ -110,7 +110,7 @@
         combo_quit_macos {
             bindings = <&kp LG ( Q )>;
             key-positions = <33 34>;
-            layers = <1 4 5 6 7 8 9 2>;
+            layers = <3 4 5 6 7 8 1>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -120,7 +120,7 @@
         combo_close_macos {
             bindings = <&kp LG ( W )>;
             key-positions = <23 34>;
-            layers = <1 4 5 6 7 8 9 2>;
+            layers = <3 4 5 6 7 8 1>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -130,7 +130,7 @@
         combo_close_windows {
             bindings = <&kp LC ( W )>;
             key-positions = <34 23>;
-            layers = <3 1 4 5 6 7 8 9>;
+            layers = <2 3 4 5 6 7 8>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -140,7 +140,7 @@
         combo_selectall_macos {
             bindings = <&kp LG ( A )>;
             key-positions = <11 23>;
-            layers = <1 4 5 6 7 8 9 2>;
+            layers = <3 4 5 6 7 8 1>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -150,7 +150,7 @@
         combo_selectall_windows {
             bindings = <&kp LC ( A )>;
             key-positions = <11 23>;
-            layers = <3 1 4 5 6 7 8 9>;
+            layers = <2 3 4 5 6 7 8>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
             slow-release;
         };
@@ -161,7 +161,7 @@
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <1 3 4 5 6 7 8 9 2>;
+            layers = <2 3 4 5 6 7 8 1>;
             slow-release;
         };
 
@@ -171,7 +171,7 @@
             bindings = <&kp SPACE>;
             key-positions = <10 11>;
             timeout-ms = <COMBO_TIMEOUT_MS>;
-            layers = <1 3 4 5 6 7 8 9 2>;
+            layers = <2 3 4 5 6 7 8 1>;
             slow-release;
         };
 
@@ -181,7 +181,7 @@
             bindings = <&kp LA(F4)>;
             key-positions = <33 34>;
             slow-release;
-            layers = <3>;
+            layers = <2>;
         };
     };
 
@@ -462,7 +462,7 @@
         z_shrt_gr: z_shortcut_cmd_grave {
             compatible = "zmk,behavior-mod-morph";
             label = "Z shortcut layer GUI+Grave";
-            bindings = <&ltl 11 Z>, <&kp GRAVE>;
+            bindings = <&ltl 10 Z>, <&kp GRAVE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI|MOD_RGUI)>;
@@ -544,7 +544,7 @@
         smart_gui: smart_gui_layer_changi {
             compatible = "zmk,behavior-mod-morph";
             label = "tap:stick gui, doubletap:&to 8, hold:gui";
-            bindings = <&skq LGUI>, <&to 8>;
+            bindings = <&skq LGUI>, <&to 7>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
@@ -631,23 +631,11 @@
 
             bindings = <
                       &kp NUMBER_2  &kp N3        &kp NUMBER_4                                     &kp LEFT_BRACKET  &kp ESCAPE                    &kp RIGHT_BRACKET
-&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 1 ESCAPE
+&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 16 ESCAPE
 &kp TAB        &kp D  &kp S         &kp T         &kp N         &kp H           &kp PERIOD         &hr RCTRL A       &hr RALT E                    &kp I              &hr RGUI H            &hr RSHIFT Q
                &kp F  &kp X         &kp C         &kp R         &kp Z           &kp DOUBLE_QUOTES  &kp P             &kp Y                         &kp J              &kp K
-                                                                &kp LEFT_SHIFT  &tmb 6 COMMA
-                                    &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 1 ENTER       &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
-            >;
-        };
-
-        low {
-            display-name = "low";
-            bindings = <
-                    &trans  &trans  &trans                  &trans                  &trans                  &to 16
-&trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
-&z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
-            &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
-                                            &trans  &trans
-                            &to 7   &to 6   &trans  &trans  &to 9                   &to 5
+                                                                &kp LEFT_SHIFT  &tmb 5 COMMA
+                                    &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 16 ENTER      &tmb 8 SPACE      &tmb_hold_preferred 4 DELETE
             >;
         };
 
@@ -655,11 +643,11 @@
             display-name = "mac";
             bindings = <
                      &kp NUMBER_2  &kp NUMBER_3                  &kp NUMBER_4                                                                   &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&ltl 5 GRAVE  &kp W  &kp G         &kp M                         &kp L              &qtmacnewtab          &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &trans
+&ltl 4 GRAVE  &kp W  &kp G         &kp M                         &kp L              &qtmacnewtab          &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &trans
 &hl LSHFT Z   &kp D  &kp S         &hl LEFT_ALT T                &hl LCTRL N        &kp COMMA             &kp PERIOD                            &hr RCTRL A       &hr RIGHT_ALT E                    &kp I              &hr RIGHT_GUI H       &hr RSHFT Q
-              &kp F  &kp X         &kp C                         &kp R              &ltl 8 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
-                                                                                    &ltl 11 SPACE         &tab_nav_word
-                                   &tmb_hold_preferred 7 ESCAPE  &tmb_mrph_del 6 0  &modtap LEFT_GUI TAB  &trans                                &tmb 9 SPACE      &tmb_hold_preferred 5 DELETE
+              &kp F  &kp X         &kp C                         &kp R              &ltl 7 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
+                                                                                    &ltl 10 SPACE         &tab_nav_word
+                                   &tmb_hold_preferred 6 ESCAPE  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                                &tmb 8 SPACE      &tmb_hold_preferred 4 DELETE
             >;
         };
 
@@ -667,11 +655,11 @@
             display-name = "win";
             bindings = <
                           &trans  &trans                     &trans                                                                    &trans  &kp LC(LA(LS(LG(RIGHT_BRACKET))))  &trans
-&ltl 5 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans  &trans                             &trans  &trans  &trans
+&ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans  &trans                             &trans  &trans  &trans
 &hl LEFT_SHIFT Z  &trans  &trans  &hl LEFT_ALT T             &hl LCTRL N        &kp COMMA             &trans                           &trans  &trans                             &trans  &trans  &trans
-                  &trans  &trans  &trans                     &trans             &ltl 8 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans  &trans                             &trans  &trans
-                                                                                &ltl 11 SPACE         &tab_nav_word
-                                  &tmb_hold_preferred 7 ESC  &tmb_mrph_del 6 0  &modtap LEFT_GUI TAB  &trans                           &trans  &trans
+                  &trans  &trans  &trans                     &trans             &ltl 7 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans  &trans                             &trans  &trans
+                                                                                &ltl 10 SPACE         &tab_nav_word
+                                  &tmb_hold_preferred 6 ESC  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                           &trans  &trans
             >;
         };
 
@@ -729,7 +717,7 @@
                         &trans  &to 0     &trans                      &trans  &trans  &trans
 &trans          &trans  &trans  &trans    &trans     &trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans  &trans
 &kp LEFT_SHIFT  &trans  &trans  &kp LALT  &kp LCTRL  &trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans  &trans
-                &trans  &trans  &trans    &trans     &tog 8  &kp F10  &kp F1  &kp F2  &kp F3  &trans
+                &trans  &trans  &trans    &trans     &tog 7  &kp F10  &kp F1  &kp F2  &kp F3  &trans
                                                      &trans  &trans
                                 &trans    &trans     &trans  &trans   &trans  &trans
             >;
@@ -753,7 +741,7 @@
             display-name = "sys";
             bindings = <
                      &trans        &to 0       &trans                                &trans  &trans  &trans
-&trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 10      &trans
+&trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 9       &trans
 &trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
         &bootloader  &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
                                                              &trans      &trans
@@ -812,7 +800,7 @@
         win_shortcuts {
             display-name = "wsho";
             bindings = <
-                   &trans     &trans     &trans                        &trans  &trans  &trans
+                   &trans     &to 0      &trans                        &trans  &trans  &trans
 &trans  &trans     &trans     &kp LC(H)  &kp LC(P)  &trans     &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp LC(O)  &kp LC(S)  &kp LC(T)  &kp LC(N)  &kp LC(I)  &trans  &trans  &trans  &trans  &trans  &trans
         &trans     &trans     &trans     &kp LC(R)  &trans     &trans  &trans  &trans  &trans  &trans
@@ -827,21 +815,21 @@
                &trans  &trans      &trans                                          &trans       &trans      &trans
 &trans  &kp Q  &kp W   &kp E       &kp R        &kp T     &kp Y                    &kp U        &kp I       &kp O    &mmt LS(LA(LCTRL)) P  &trans
 &trans  &kp A  &kp S   &hl LALT D  &hl LCTRL F  &kp G     &kp H                    &hr RCTRL J  &hr RALT K  &kp L    &kp SEMI              &trans
-        &kp Z  &kp X   &kp C       &kp V        &ltl 8 B  &mmt LS(LA(LC(LGUI))) N  &kp M        &kp COMMA   &kp DOT  &kp FSLH
+        &kp Z  &kp X   &kp C       &kp V        &ltl 7 B  &mmt LS(LA(LC(LGUI))) N  &kp M        &kp COMMA   &kp DOT  &kp FSLH
                                                 &trans    &trans
                        &trans      &trans       &trans    &trans                   &trans       &trans
             >;
         };
 
-        layer_17 {
-            display-name = "low";
+        layer_toggle {
+            display-name = "layer";
             bindings = <
-                    &trans  &trans  &trans                  &trans                  &trans                  &to 16
-&trans      &to 0   &to 2   &to 3   &to 4   &to 5   &to 6   &to 7                   &to 8                   &to 9                   &to 10  &trans
+                    &trans  &trans  &trans                  &trans                  &trans                  &to 15
+&trans      &to 0   &to 1   &to 2   &to 3   &to 4   &to 5   &to 6                   &to 7                   &to 8                   &to 9   &trans
 &z_shrt_gr  &trans  &trans  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
-            &trans  &trans  &trans  &trans  &to 8   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
+            &trans  &trans  &trans  &trans  &to 7   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                             &trans  &trans
-                            &to 7   &to 6   &trans  &trans  &to 9                   &to 5
+                            &to 6   &to 5   &trans  &trans  &to 8                   &to 4
             >;
         };
 
@@ -1225,23 +1213,23 @@
         compatible = "zmk,conditional-layers";
 
         tri_win_num {
-            if-layers = <3 6>;
-            then-layer = <12>;
+            if-layers = <2 5>;
+            then-layer = <11>;
         };
 
         tri_win_cur {
-            if-layers = <3 7>;
-            then-layer = <13>;
+            if-layers = <2 6>;
+            then-layer = <12>;
         };
 
         tri_win_macro {
-            if-layers = <3 9>;
-            then-layer = <14>;
+            if-layers = <2 8>;
+            then-layer = <13>;
         };
 
         tri_win_shortcuts {
-            if-layers = <3 11>;
-            then-layer = <15>;
+            if-layers = <2 10>;
+            then-layer = <14>;
         };
     };
 };
