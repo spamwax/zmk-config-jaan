@@ -683,7 +683,7 @@
 &trans  &kp CARET  &kp DOLLAR  &kp MINUS       &kp PLUS         &kp COLON  &kp BSLH  &kp STAR   &kp LPAR  &kp RPAR         &kp EQUAL  &trans
         &kp PRCNT  &kp HASH    &trans          &kp AMPS         &kp TILDE  &kp PIPE  &kp QMARK  &trans    &trans           &trans
                                                                 &trans     &trans
-                               &trans          &trans           &trans     &trans    &trans     &trans
+                               &trans          &kp DELETE       &trans     &trans    &trans     &trans
             >;
         };
 
