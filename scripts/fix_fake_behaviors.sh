@@ -25,7 +25,7 @@ cp "$input_file" "$backup_file"
 $sed_cmd -i \
     -e '/fake_.*_behavior/!{s/\(<[^>]*\)fake_\([^<> ]*\)/\1\2/g}' \
     -e '/fake_.*_behavior/!{s/\<fake_\([^<> &]*\)\>/\1     /g}' \
-    -e '38s#^// ##' \
+    -e '/unsupported-behaviors\.dtsi/ s|^[[:space:]]*//[[:space:]]*||' \
     "$input_file"
 
 # Notify the user
