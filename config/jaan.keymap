@@ -628,11 +628,11 @@
 
             bindings = <
                       &kp NUMBER_2  &kp N3        &kp NUMBER_4                                     &kp LEFT_BRACKET  &kp ESCAPE                    &kp RIGHT_BRACKET
-&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 3 ESCAPE
+&kp BACKSPACE  &kp W  &kp G         &kp M         &kp L         &kp B           &kp SLASH          &kp U             &kp O                         &kp B              &mmt LS(LA(LCTRL)) V  &lt 4 ESCAPE
 &kp TAB        &kp D  &kp S         &kp T         &kp N         &kp H           &kp PERIOD         &hr RCTRL A       &hr RALT E                    &kp I              &hr RGUI H            &hr RSHIFT Q
                &kp F  &kp X         &kp C         &kp R         &kp Z           &kp DOUBLE_QUOTES  &kp P             &kp Y                         &kp J              &kp K
-                                                                &kp LEFT_SHIFT  &tmb 3 COMMA
-                                    &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 16 ENTER      &tmb 8 SPACE      &tmb_hold_preferred 4 DELETE
+                                                                &kp LEFT_SHIFT  &tmb 8 COMMA
+                                    &kp LEFT_ALT  &kp LCTRL     &kp SPACE       &tmb 16 ENTER      &tmb 3 SPACE      &tmb_hold_preferred 4 DELETE
             >;
         };
 
@@ -651,24 +651,24 @@
         windows {
             display-name = "win";
             bindings = <
-                          &trans  &trans                     &trans                                                                    &trans  &kp LC(LA(LS(LG(RIGHT_BRACKET))))  &trans
-&ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans  &trans                             &trans  &trans  &trans
-&hl LEFT_SHIFT Z  &trans  &trans  &hl LEFT_ALT T             &hl LCTRL N        &kp COMMA             &trans                           &trans  &trans                             &trans  &trans  &trans
-                  &trans  &trans  &trans                     &trans             &ltl 7 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans  &trans                             &trans  &trans
+                          &trans  &trans                     &trans                                                                    &trans        &kp LC(LA(LS(LG(RIGHT_BRACKET))))  &trans
+&ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans        &trans                             &trans  &trans  &trans
+&hl LEFT_SHIFT Z  &trans  &trans  &hl LEFT_ALT T             &hl LCTRL N        &kp COMMA             &trans                           &trans        &trans                             &trans  &trans  &trans
+                  &trans  &trans  &trans                     &trans             &ltl 7 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans        &trans                             &trans  &trans
                                                                                 &ltl 10 SPACE         &tab_nav_word
-                                  &tmb_hold_preferred 6 ESC  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                           &trans  &trans
+                                  &tmb_hold_preferred 6 ESC  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                           &tmb 8 SPACE  &trans
             >;
         };
 
-        mirror {
-            display-name = "mir";
+        cursnum {
+            display-name = "csn";
             bindings = <
-                &trans  &to 0   &trans                  &trans    &trans    &trans
-&trans  &trans  &kp N7  &kp N8  &kp N9  &trans  &trans  &trans    &kp UP    &trans     &trans  &trans
-&trans  &trans  &kp N4  &kp N5  &kp N6  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-        &trans  &kp N1  &kp N2  &kp N3  &trans  &trans  &trans    &trans    &trans     &trans
-                                        &trans  &trans
-                        &trans  &kp N0  &trans  &trans  &trans    &trans
+                  &trans      &to 0     &trans                            &trans  &trans  &trans
+&trans  &trans    &kp K_MUTE  &kp UP    &kp C_VOLUME_UP  &trans   &trans  &kp N7  &kp N8  &kp N9  &trans  &trans
+&trans  &kp HOME  &kp LEFT    &kp DOWN  &kp RIGHT        &kp END  &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
+        &trans    &trans      &trans    &trans           &trans   &trans  &kp N1  &kp N2  &kp N3  &trans
+                                                         &trans   &trans
+                              &trans    &kp N0           &trans   &trans  &trans  &trans
             >;
         };
 
