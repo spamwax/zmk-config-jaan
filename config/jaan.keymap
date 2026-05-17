@@ -367,7 +367,7 @@
         sudosave: sudosave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_BRACKET) &kp SEMI &kp W &kp EXCL &kp EXCL &kp ENTER>;
+            bindings = <&kp LC(LEFT_BRACKET) &kp SEMI &kp W &kp EXCL &kp EXCL>;
             label = "SUDOSAVE";
         };
     };
