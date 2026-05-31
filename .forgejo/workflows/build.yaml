@@ -1,0 +1,74 @@
+name: Build ZMK with Nix
+
+on:
+  push:
+    branches:
+      - keymap-editor
+      - forgejo-ci
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ghoolak-docker
+    container:
+      image: node:22-bookworm
+      volumes:
+        - /srv/forgejo-runner/artifacts/zmk-config-jaan:/host-artifacts
+
+    steps:
+      - name: Install prerequisites
+        run: |
+          apt-get update
+          apt-get install -y curl xz-utils git ca-certificates sudo bash
+
+      - name: Checkout
+        uses: https://data.forgejo.org/actions/checkout@v4
+
+      - name: Apply keymap editor compatibility fixes
+        run: |
+          chmod +x scripts/fix_fake_behaviors.sh
+          ./scripts/fix_fake_behaviors.sh
+          git diff -- config/jaan.keymap || true
+
+      - name: Install Nix
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
+            | sh -s -- install linux --init none --no-confirm
+
+      - name: Build firmware
+        run: |
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+          nix --extra-experimental-features 'nix-command flakes' develop --command just init
+          nix --extra-experimental-features 'nix-command flakes' develop --command just build all
+
+      - name: Copy firmware to ghoolak host staging directory
+        run: |
+          set -euo
+          find firmware -maxdepth 2 -type f -ls
+          mkdir -p /host-artifacts/${{ forgejo.run_number }}
+          cp -v firmware/* /host-artifacts/${{ forgejo.run_number }}/
+
+      - name: Show firmware output
+        run: |
+          find firmware -maxdepth 2 -type f -ls || true
+
+      - name: Upload firmware to Forgejo web UI
+        uses: https://data.forgejo.org/actions/upload-artifact@v3-node20
+        with:
+          name: firmware
+          path: firmware/
+
+  copy-to-macmini:
+    runs-on: ghoolak-host
+    needs: build
+    steps:
+      - name: Copy firmware to macmini
+        run: |
+          set -euo pipefail
+
+          src="/srv/forgejo-runner/artifacts/zmk-config-jaan/${{ forgejo.run_number }}"
+          remote_dir="/Volumes/manzel/hamid/Downloads/zmk-firmware/${{ forgejo.repository }}/${{ forgejo.run_number }}"
+
+          test -d "$src"
+          ssh macmini "mkdir -p '$remote_dir'"
+          scp "$src"/* "macmini:$remote_dir/"

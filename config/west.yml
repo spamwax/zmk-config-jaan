@@ -27,6 +27,9 @@ manifest:
       revision: v0.1 # set to same version as zmk
     - name: nice-view-gem
       remote: m165437
-      revision: main
+      # Pin before upstream switched nice-view-gem to the newer Zephyr/LVGL stack.
+      # Commit 7794ebf is the known-good revision currently working with this
+      # config's ZMK/Zephyr 3.5-era build.
+      revision: 7794ebf
   self:
     path: config
