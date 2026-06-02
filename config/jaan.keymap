@@ -360,7 +360,11 @@
         vim_select_all: vim_select_all {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_BRACKET) &kp G &kp G &kp LS(V) &kp LS(G)>;
+            bindings =
+                <&kp LC(LEFT_BRACKET) &kp G &kp G &kp LS(V)>,
+                <&macro_wait_time 300>,
+                <&kp LS(G)>;
+
             label = "VIM_SELECT_ALL";
         };
 
@@ -480,7 +484,6 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
-            keep-mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         qtmacnewtab: mac_new_tab {
@@ -731,7 +734,7 @@
             display-name = "macr";
             bindings = <
                 &trans     &to 0          &trans                                      &trans    &trans        &trans
-&trans  &trans  &prevdiag  &trans         &nextdiag  &kp LG(S)       &vim_select_all  &nvim     &nvimqt       &trans  &trans  &trans
+&trans  &trans  &prevdiag  &trans         &nextdiag  &trans          &vim_select_all  &nvim     &nvimqt       &trans  &trans  &trans
 &trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs             &visave   &vinsertsave  &trans  &texit  &nvimt
         &trans  &trans     &trans         &trans     &trans          &viquit          &gitstat  &sudosave     &trans  &trans
                                                      &surwrd         &trans
@@ -793,7 +796,7 @@
             display-name = "wmac";
             bindings = <
                 &trans  &trans  &trans                          &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
                                         &trans          &trans
