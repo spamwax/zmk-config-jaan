@@ -8,7 +8,7 @@ remote_url="${2:-}"
 
 # Customize these.
 protected_remotes_regex='^(origin)$'
-protected_branches_regex='^(main|keymap-editor)$'
+protected_branches_regex='^(keymap-editor)$'
 
 should_run_checks=false
 
