@@ -598,10 +598,6 @@
 
         tap_dash_bslh: tap_dash_bslh {
             compatible = "zmk,behavior-tap-dance";
-
-            label = "tap:-, 2tap:\";
-            #
-
             binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BACKSLASH>;
 
