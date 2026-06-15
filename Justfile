@@ -90,7 +90,15 @@ clean-nix:
 
 # initialize west
 init:
-    west init -l config
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    if [[ ! -d .west ]]; then
+        west init -l config
+    else
+        echo "app is already initialized!"
+    fi
+
     west update --fetch-opt=--filter=blob:none
     west zephyr-export
 

@@ -9,9 +9,10 @@ on:
 
 jobs:
   build:
-    runs-on: ghoolak-docker
+    runs-on: opi5pro-docker
     container:
       image: node:24-bookworm
+      options: --cpuset-cpus=4-7
       volumes:
         - /srv/forgejo-runner/nix:/nix
 
@@ -66,7 +67,7 @@ jobs:
           path: firmware/
 
   copy-to-macmini:
-    runs-on: ghoolak-host
+    runs-on: opi5pro-host
     needs: build
     steps:
       - name: Download firmware artifact from Forgejo web UI
