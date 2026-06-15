@@ -595,10 +595,13 @@
             release-after-ms = <1000>;
         };
 
-        tab_nav_word: tab_nav_word {
+        tap_dash_bslh: tap_dash_bslh {
             compatible = "zmk,behavior-tap-dance";
-            label = "tap:tab, 2tap:nav_word";
-            #binding-cells = <0>;
+
+            label = "tap:-, 2tap:\";
+            #
+
+            binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BACKSLASH>;
         };
 
@@ -653,7 +656,7 @@
 &ltl 4 GRAVE  &kp W  &kp G         &kp M                         &kp L              &qtmacnewtab          &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &trans
 &hl LSHFT Z   &kp D  &kp S         &hl LEFT_ALT T                &hl LCTRL N        &kp COMMA             &kp PERIOD                            &hr RCTRL A       &hr RIGHT_ALT E                    &kp I              &hr RIGHT_GUI H       &hr RSHFT Q
               &kp F  &kp X         &kp C                         &kp R              &ltl 7 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
-                                                                                    &ltl 10 SPACE         &tab_nav_word
+                                                                                    &ltl 10 SPACE         &tap_dash_bslh
                                    &tmb_hold_preferred 6 ESCAPE  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                                &tmb 8 SPACE      &tmb_hold_preferred 4 DELETE
             >;
         };
@@ -665,7 +668,7 @@
 &ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans        &trans                             &trans  &trans  &trans
 &hl LEFT_SHIFT Z  &trans  &trans  &hl LEFT_ALT T             &hl LCTRL N        &kp COMMA             &trans                           &trans        &trans                             &trans  &trans  &trans
                   &trans  &trans  &trans                     &trans             &ltl 7 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans        &trans                             &trans  &trans
-                                                                                &ltl 10 SPACE         &tab_nav_word
+                                                                                &ltl 10 SPACE         &tap_dash_bslh
                                   &tmb_hold_preferred 6 ESC  &tmb_mrph_del 5 0  &modtap LEFT_GUI TAB  &trans                           &tmb 8 SPACE  &trans
             >;
         };
