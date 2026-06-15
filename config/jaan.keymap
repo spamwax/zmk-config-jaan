@@ -603,6 +603,8 @@
 
             binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BACKSLASH>;
+
+            tapping-term-ms = <201>;
         };
 
         modtap: mdtap_hold {
