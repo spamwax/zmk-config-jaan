@@ -32,7 +32,7 @@
 #define COMBO_TIMEOUT_MS 60
 #define THUMB_HOLDING_TYPE "balanced"
 
-// #include "unsupported-behaviors.dtsi"
+#include "unsupported-behaviors.dtsi"
 //
 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)
 // a thumb key to activate a layer.  Shorter holds are treated as taps.
@@ -599,9 +599,7 @@
             compatible = "zmk,behavior-tap-dance";
 
             label = "tap:-, 2tap:\";
-            #
-
-            binding-cells = <0>;
+            #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BACKSLASH>;
 
             tapping-term-ms = <201>;
@@ -704,7 +702,7 @@
             bindings = <
                            &trans     &to 0      &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
 &kp LG(GRAVE)   &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
-&kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
+&kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &appswmac       &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
                 &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp COMMA  &kp N1                &kp N2      &kp N3                 &kp EQUAL
                                                             &trans          &kp SPACE
                                       &trans     &trans     &trans          &trans     &kp N0                &kp DOT
@@ -716,7 +714,7 @@
             bindings = <
                           &trans      &to 0         &trans                                      &kp LA(A)        &trans    &kp LA(I)
 &kp LG(GRAVE)  &trans     &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &kp LG(S)       &kp PG_UP     &kp LS(LC(TAB))  &kp UP    &kp LC(TAB)  &kp PG_DN      &trans
-&kp LSHIFT     &kp LGUI   &trans      &kp LALT      &kp LCTRL     &fake_appswmac  &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
+&kp LSHIFT     &kp LGUI   &trans      &kp LALT      &kp LCTRL     &appswmac       &kp LG(LEFT)  &kp LEFT         &kp DOWN  &kp RIGHT    &kp LG(RIGHT)  &trans
                &kp LG(Z)  &kp LG(X)   &kp LG(C)     &kp LG(V)     &kp LS(LG(Z))   &kp HOME      &kp LA(B)        &trans    &kp LA(F)    &kp END
                                                                   &trans          &trans
                                       &trans        &trans        &trans          &trans        &trans           &trans
@@ -740,7 +738,7 @@
             bindings = <
                 &trans     &to 0          &trans                                      &trans    &trans        &trans
 &trans  &trans  &prevdiag  &trans         &nextdiag  &trans          &vim_select_all  &nvim     &nvimqt       &trans  &trans  &trans
-&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &fake_appswmac  &zfs             &visave   &vinsertsave  &trans  &texit  &nvimt
+&trans  &trans  &prevhunk  &preview_hunk  &nexthunk  &appswmac       &zfs             &visave   &vinsertsave  &trans  &texit  &nvimt
         &trans  &trans     &trans         &trans     &trans          &viquit          &gitstat  &sudosave     &trans  &trans
                                                      &surwrd         &trans
                            &trans         &trans     &trans          &trans           &trans    &trans
@@ -778,7 +776,7 @@
             bindings = <
                    &trans     &trans     &trans                             &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &appswwin       &trans  &trans  &trans  &trans  &trans  &trans
         &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))   &trans  &trans  &trans  &trans  &trans
                                                     &trans          &trans
                               &trans     &trans     &trans          &trans  &trans  &trans
@@ -790,7 +788,7 @@
             bindings = <
                    &trans     &trans     &trans                               &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans    &trans  &trans  &trans  &trans   &trans
-&trans  &trans     &trans     &trans     &trans     &fake_appswwin  &kp HOME  &trans  &trans  &trans  &kp END  &trans
+&trans  &trans     &trans     &trans     &trans     &appswwin       &kp HOME  &trans  &trans  &trans  &kp END  &trans
         &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))   &trans    &trans  &trans  &trans  &trans
                                                     &trans          &trans
                               &trans     &trans     &trans          &trans    &trans  &trans
@@ -802,7 +800,7 @@
             bindings = <
                 &trans  &trans  &trans                          &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &appswwin       &trans  &trans  &trans  &trans  &trans  &trans
         &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
                                         &trans          &trans
                         &trans  &trans  &trans          &trans  &trans  &trans
@@ -838,7 +836,7 @@
             bindings = <
                                &trans     &trans  &trans                  &trans                  &trans                  &to 15
 &trans      &to 0              &to 1      &to 2   &to 3   &to 4   &to 5   &to 6                   &to 7                   &to 8                   &to 9   &trans
-&z_shrt_gr  &ext_power EP_TOG  &soft_off  &trans  &trans  &trans  &trans  &trans                  &caps_word              &fake_num_word 6        &trans  &trans
+&z_shrt_gr  &ext_power EP_TOG  &soft_off  &trans  &trans  &trans  &trans  &trans                  &caps_word              &num_word      6        &trans  &trans
             &trans             &trans     &trans  &trans  &to 7   &trans  &kp LS(LA(LC(LG(F7))))  &kp LS(LG(LA(LC(F8))))  &kp LS(LA(LC(LG(F9))))  &trans
                                                           &trans  &trans
                                           &to 6   &to 5   &trans  &trans  &to 8                   &to 4
