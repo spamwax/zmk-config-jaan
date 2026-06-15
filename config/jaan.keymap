@@ -600,9 +600,7 @@
             compatible = "zmk,behavior-tap-dance";
             binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BACKSLASH>;
-
             tapping-term-ms = <201>;
-            label = "tap: -, 2nd: bslash";
         };
 
         modtap: mdtap_hold {
