@@ -12,30 +12,35 @@ protected_branches_regex='^(keymap-editor)$'
 
 should_run_checks=false
 
-echo "pre-push: remote_name=$remote_name"
-echo "pre-push: remote_url=$remote_url"
+if [ "$#" -eq 0 ]; then
+    echo "manual: running devcontainer build from shell."
+    should_run_checks=true
+else
+    echo "pre-push: remote_name=$remote_name"
+    echo "pre-push: remote_url=$remote_url"
 
-while read -r local_ref local_sha remote_ref remote_sha
-do
-    local_branch="${local_ref#refs/heads/}"
-    remote_branch="${remote_ref#refs/heads/}"
+    while read -r local_ref local_sha remote_ref remote_sha
+    do
+        local_branch="${local_ref#refs/heads/}"
+        remote_branch="${remote_ref#refs/heads/}"
 
-    echo "pre-push: $local_branch -> $remote_name/$remote_branch"
+        echo "pre-push: $local_branch -> $remote_name/$remote_branch"
 
-    # Skip branch deletes.
-    if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
-        echo "pre-push: branch deletion detected; skipping checks for $remote_branch"
-        continue
+        # Skip branch deletes.
+        if [ "$local_sha" = "0000000000000000000000000000000000000000" ]; then
+            echo "pre-push: branch deletion detected; skipping checks for $remote_branch"
+            continue
+        fi
+
+        if [[ "$remote_name" =~ $protected_remotes_regex ]] && [[ "$remote_branch" =~ $protected_branches_regex ]]; then
+            should_run_checks=true
+        fi
+    done
+
+    if [ "$should_run_checks" != true ]; then
+        echo "pre-push: skipping devcontainer build for this remote/branch."
+        exit 0
     fi
-
-    if [[ "$remote_name" =~ $protected_remotes_regex ]] && [[ "$remote_branch" =~ $protected_branches_regex ]]; then
-        should_run_checks=true
-    fi
-done
-
-if [ "$should_run_checks" != true ]; then
-    echo "pre-push: skipping devcontainer build for this remote/branch."
-    exit 0
 fi
 
 PROJECT_PATH="$(pwd)"
