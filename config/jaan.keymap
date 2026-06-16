@@ -366,21 +366,18 @@
                 <&macro_wait_time 300>,
                 <&kp LS(G)>;
 
-            label = "VIM_SELECT_ALL";
         };
 
         sudosave: sudosave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LEFT_BRACKET) &kp SEMI &kp W &kp EXCL &kp EXCL>;
-            label = "SUDOSAVE";
         };
     };
 
     behaviors {
         hl: hrmod_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "Home row mod - Left";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -394,7 +391,6 @@
 
         hr: hrmod_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "Home row mod - Right";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -408,7 +404,6 @@
 
         ltr: layer_tap_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer tap - Right";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -421,7 +416,6 @@
 
         ltl: layer_tap_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer tap - Left";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -434,7 +428,6 @@
 
         tmb: miryoku_thumb_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "Thumb layer tap";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -446,7 +439,6 @@
 
         tmb_hold_preferred: thumb_layer_hold_preferred {
             compatible = "zmk,behavior-hold-tap";
-            label = "Thumb layer tap - hold pref.";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
@@ -458,7 +450,6 @@
 
         mmt: my_mod_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Modifier tap";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -470,7 +461,6 @@
 
         z_shrt_gr: z_shortcut_cmd_grave {
             compatible = "zmk,behavior-mod-morph";
-            label = "Z shortcut layer GUI+Grave";
             bindings = <&ltl 10 Z>, <&kp GRAVE>;
 
             #binding-cells = <0>;
@@ -480,7 +470,6 @@
 
         dqt_sqt: double_then_single_quote {
             compatible = "zmk,behavior-mod-morph";
-            label = "DQT_SQT";
             bindings = <&kp DOUBLE_QUOTES>, <&kp SQT>;
 
             #binding-cells = <0>;
@@ -489,7 +478,6 @@
 
         qtmacnewtab: mac_new_tab {
             compatible = "zmk,behavior-mod-morph";
-            label = "Quot. GUI-T for macOS";
             bindings = <&dqt_sqt>, <&kp T>;
 
             #binding-cells = <0>;
@@ -499,7 +487,6 @@
 
         qtwinnewtab: win_new_tab {
             compatible = "zmk,behavior-mod-morph";
-            label = "Quot. CTRL-T for Win";
             bindings = <&dqt_sqt>, <&kp LC(T)>;
 
             #binding-cells = <0>;
@@ -508,7 +495,6 @@
 
         shft_bspc: shift_backspace {
             compatible = "zmk,behavior-mod-morph";
-            label = "Backspace Delete(+SHIFT)";
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
 
             #binding-cells = <0>;
@@ -518,7 +504,6 @@
         tmb_mrph_del: thumb_morph_delete {
             compatible = "zmk,behavior-hold-tap";
             flavor = "hold-preferred";
-            label = "Thumb &mo + Backspace morph";
             tapping-term-ms = <170>;
             quick-tap-ms = <240>; // enable repeat
             //global-quick-tap; // no typing streak
@@ -532,7 +517,6 @@
 
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
-            label = "Quick release sticky";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
@@ -542,7 +526,6 @@
 
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
-            label = "tap:stick shft, doubletap:capsword, hold:shft";
             bindings = <&skq RSHFT>, <&caps_word>;
 
             #binding-cells = <0>;
@@ -551,7 +534,6 @@
 
         smart_gui: smart_gui_layer_changi {
             compatible = "zmk,behavior-mod-morph";
-            label = "tap:stick gui, doubletap:&to 8, hold:gui";
             bindings = <&skq LGUI>, <&to 7>;
 
             #binding-cells = <0>;
@@ -561,28 +543,24 @@
 
         fake_bind1: fake_node1_behavior {
             compatible = "zmk,behavior-key-repeat";
-            label = "label1";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_appswmac: fake_appswmac_behavior_tristate {
             compatible = "zmk,behavior-key-repeat";
-            label = "label2";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_appswwin: fake_appswwin_behavior_tristate {
             compatible = "zmk,behavior-key-repeat";
-            label = "label3";
             #binding-cells = <0>;
             usage-pages = <HID_USAGE_KEY>;
         };
 
         fake_num_word: fake_num_word_behavior {
             compatible = "zmk,behavior-sticky-key";
-            label = "label4";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
@@ -590,7 +568,6 @@
 
         fake_nav_word: fake_nav_word_behavior {
             compatible = "zmk,behavior-sticky-key";
-            label = "label5";
             bindings = <&kp>;
             #binding-cells = <1>;
             release-after-ms = <1000>;
@@ -598,7 +575,6 @@
 
         modtap: mdtap_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "mod tap with hold preferred";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -610,7 +586,6 @@
 
         dash_bslh_tap: dash_bslh_tap {
             compatible = "zmk,behavior-tap-dance";
-            label = "DASH_BSLH_TAP";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BSLH>;
 
@@ -744,7 +719,7 @@
                            &trans         &trans     &trans     &trans           &trans    &trans
             >;
 
-            label = "git,nvim,zfs macros";
+            // label = "git,nvim,zfs macros";
         };
 
         system {
