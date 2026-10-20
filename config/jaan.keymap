@@ -588,7 +588,7 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp BSLH>;
 
-            tapping-term-ms = <140>;
+            tapping-term-ms = <155>;
         };
     };
 
