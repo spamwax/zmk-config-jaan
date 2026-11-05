@@ -736,12 +736,12 @@
         common_shortcuts {
             display-name = "csho";
             bindings = <
-                   &trans     &to 0      &trans                        &trans  &trans  &trans
-&trans  &trans     &trans     &kp LG(H)  &kp LG(P)  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LG(O)  &kp LG(S)  &kp LG(T)  &kp LG(N)  &kp LG(I)  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans     &trans     &trans     &kp LG(R)  &trans     &trans  &trans  &trans  &trans  &trans
-                                                    &trans     &trans
-                              &trans     &trans     &trans     &trans  &trans  &trans
+                   &trans         &to 0          &trans                            &trans  &trans  &trans
+&trans  &trans     &trans         &kp LG(H)      &kp LG(P)      &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LG(O)  &kp LG(S)      &kp LG(T)      &kp LG(N)      &kp LG(I)  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans     &kp LS(LG(X))  &kp LS(LG(C))  &kp LS(LG(V))  &kp LG(R)  &trans  &trans  &trans  &trans  &trans
+                                                                &trans     &trans
+                                  &trans         &trans         &trans     &trans  &trans  &trans
             >;
         };
 
@@ -784,12 +784,12 @@
         win_shortcuts {
             display-name = "wsho";
             bindings = <
-                   &trans     &to 0      &trans                        &trans  &trans  &trans
-&trans  &trans     &trans     &kp LC(H)  &kp LC(P)  &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp LC(O)  &kp LC(S)  &kp LC(T)  &kp LC(N)  &kp LC(I)  &trans  &trans  &trans  &trans  &trans  &trans
-        &trans     &trans     &trans     &kp LC(R)  &trans     &trans  &trans  &trans  &trans  &trans
-                                                    &trans     &trans
-                              &trans     &trans     &trans     &trans  &trans  &trans
+                   &trans         &to 0          &trans                            &trans  &trans  &trans
+&trans  &trans     &trans         &kp LC(H)      &kp LC(P)      &trans     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp LC(O)  &kp LC(S)      &kp LC(T)      &kp LC(N)      &kp LC(I)  &trans  &trans  &trans  &trans  &trans  &trans
+        &trans     &kp LS(LC(X))  &kp LS(LC(C))  &kp LS(LC(V))  &kp LC(R)  &trans  &trans  &trans  &trans  &trans
+                                                                &trans     &trans
+                                  &trans         &trans         &trans     &trans  &trans  &trans
             >;
         };
 
