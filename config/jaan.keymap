@@ -707,7 +707,7 @@
             >;
         };
 
-        macros {
+        macroz {
             display-name = "macr";
             bindings = <
                 &trans     &to 0          &trans                                      &trans    &trans        &trans
