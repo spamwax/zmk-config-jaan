@@ -724,12 +724,12 @@
         system {
             display-name = "sys";
             bindings = <
-                     &trans        &to 0       &trans                                &trans  &trans  &trans
-&trans  &trans       &out OUT_BLE  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 9       &trans
-&trans  &bt_0        &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
-        &bootloader  &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
-                                                             &trans      &trans
-                                   &trans      &trans        &trans      &trans      &trans  &trans
+                      &trans        &to 0       &trans                                &trans  &trans  &trans
+&trans  &out OUT_BLE  &out OUT_USB  &bt BT_CLR  &out OUT_TOG  &trans      &trans      &trans  &trans  &trans      &tog 9       &trans
+&trans  &bt_0         &bt_1         &bt_2       &bt_3         &trans      &trans      &trans  &trans  &trans      &trans       &trans
+        &bootloader   &sys_reset    &trans      &trans        &bt_clrall  &bt_clrall  &trans  &trans  &sys_reset  &bootloader
+                                                              &trans      &trans
+                                    &trans      &trans        &trans      &trans      &trans  &trans
             >;
         };
 
