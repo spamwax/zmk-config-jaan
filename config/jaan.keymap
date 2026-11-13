@@ -4,33 +4,33 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-#define BASE 0
-#define LOW 1
-#define GAM 2
-#define WIN 3
-#define MIR 4
-#define SYM 5
-#define NUM 6
-#define CUR 7
-#define FUN 8
-#define MCR 9
-#define SYS 10
-#define COMMON_SHORTCUTS 11
-#define THENWIN_NUM 12
-#define THENWIN_CUR 13
-#define THENWIN_MCR 14
-#define THENWIN_SHORTCUTS 15
-#define QWERTY 16
-#define HYPER LG(LC(LA(LSHFT)))
-#define MEH   LC(LA(LSHFT))
-#define HYPF7 &kp LG(LC(LA(LS(F7))))
-#define HYPF8 &kp LG(LC(LA(LS(F8))))
-#define HYPF9 &kp LG(LC(LA(LS(F9))))
-#define ALFRED &kp LG(LC(LA(LS(RBKT))))
-#define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
-#define TM_MRPH_DEL &tmb_mrph_del
+// #define BASE 0
+// #define LOW 1
+// #define GAM 2
+// #define WIN 3
+// #define MIR 4
+// #define SYM 5
+// #define NUM 6
+// #define CUR 7
+// #define FUN 8
+// #define MCR 9
+// #define SYS 10
+// #define COMMON_SHORTCUTS 11
+// #define THENWIN_NUM 12
+// #define THENWIN_CUR 13
+// #define THENWIN_MCR 14
+// #define THENWIN_SHORTCUTS 15
+// #define QWERTY 16
+// #define HYPER LG(LC(LA(LSHFT)))
+// #define MEH   LC(LA(LSHFT))
+// #define HYPF7 &kp LG(LC(LA(LS(F7))))
+// #define HYPF8 &kp LG(LC(LA(LS(F8))))
+// #define HYPF9 &kp LG(LC(LA(LS(F9))))
+// #define ALFRED &kp LG(LC(LA(LS(RBKT))))
+// #define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
+// #define TM_MRPH_DEL &tmb_mrph_del
 #define COMBO_TIMEOUT_MS 60
-#define THUMB_HOLDING_TYPE "balanced"
+// #define THUMB_HOLDING_TYPE "balanced"
 
 #include "unsupported-behaviors.dtsi"
 
