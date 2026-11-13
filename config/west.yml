@@ -24,7 +24,7 @@ manifest:
     #   revision: main
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.1 # set to same version as zmk
+      revision: v0.3 # set to same version as zmk
     - name: nice-view-gem
       remote: m165437
       # Pin before upstream switched nice-view-gem to the newer Zephyr/LVGL stack.
