@@ -22,7 +22,7 @@ services:
         git
     volumes:
       - /tmp:/tmp
-      - /Volumes/manzel/hamid/projects/hobbies/zmk_firmwares/zmk-config-jaan:/root/zmk-workspace:rw
+      - ~/projects/hobbies/zmk_firmwares/zmk-config-jaan:/root/zmk-workspace:rw
       # - zmk_config_root:/root/zmk-workspace
 secrets:
   khersak_ssh_key:

@@ -59,6 +59,7 @@
         ],
         "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
         "vscode-neovim.neovimInitVimPaths.darwin": "~/projects/hobbies/zmk_firmwares/zmk-config-jaan/scripts/docker/nvimrc-vscode",
+        "vscode-neovim.neovimInitVimPaths.linux": "~/projects/hobbies/zmk_firmwares/zmk-config-jaan/scripts/docker/nvimrc-vscode",
         "terminal.integrated.scrollback": 50000,
         // "workbench.colorTheme": "Monokai Pro (Filter Machine)"
         "workbench.colorTheme": "Hopscotch",
