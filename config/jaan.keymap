@@ -29,7 +29,9 @@
 // #define ALFRED &kp LG(LC(LA(LS(RBKT))))
 // #define TMHP &tmb_hold_preferred // layer-tap for thumb keys with hold-preferred!
 // #define TM_MRPH_DEL &tmb_mrph_del
+
 #define COMBO_TIMEOUT_MS 60
+
 // #define THUMB_HOLDING_TYPE "balanced"
 
 #include "unsupported-behaviors.dtsi"
@@ -627,7 +629,7 @@
             display-name = "mac";
             bindings = <
                      &kp NUMBER_2  &kp NUMBER_3                  &kp NUMBER_4                                                                   &kp LEFT_BRACKET  &kp LS(LA(LC(LG(RIGHT_BRACKET))))  &kp RIGHT_BRACKET
-&ltl 4 GRAVE  &kp W  &kp G         &kp M                         &kp L              &qtmacnewtab          &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &trans
+&ltl 4 GRAVE  &kp W  &kp G         &kp M                         &kp L              &dqt_sqt              &kp SEMICOLON                         &kp U             &kp O                              &kp B              &mmt LS(LA(RCTRL)) V  &trans
 &hl LSHFT Z   &kp D  &kp S         &hl LEFT_ALT T                &hl LCTRL N        &kp COMMA             &kp PERIOD                            &hr RCTRL A       &hr RIGHT_ALT E                    &kp I              &hr RIGHT_GUI H       &hr RSHFT Q
               &kp F  &kp X         &kp C                         &kp R              &ltl 7 SLASH          &mmt LS(LA(LC(LEFT_GUI))) UNDERSCORE  &kp P             &kp Y                              &kp J              &kp K
                                                                                     &ltl 10 SPACE         &dash_bslh_tap
@@ -639,7 +641,7 @@
             display-name = "win";
             bindings = <
                           &trans  &trans                     &trans                                                                    &trans        &kp LC(LA(LS(LG(RIGHT_BRACKET))))  &trans
-&ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &qtwinnewtab          &kp SEMI                         &trans        &trans                             &trans  &trans  &trans
+&ltl 4 GRAVE      &trans  &trans  &trans                     &trans             &dqt_sqt              &kp SEMI                         &trans        &trans                             &trans  &trans  &trans
 &hl LEFT_SHIFT Z  &trans  &trans  &hl LEFT_ALT T             &hl LCTRL N        &kp COMMA             &trans                           &trans        &trans                             &trans  &trans  &trans
                   &trans  &trans  &trans                     &trans             &ltl 7 FSLH           &mmt LS(LA(LC(LEFT_GUI))) UNDER  &trans        &trans                             &trans  &trans
                                                                                 &ltl 10 SPACE         &dash_bslh_tap
@@ -675,9 +677,9 @@
             display-name = "numb";
             bindings = <
                            &trans     &to 0      &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
-&kp LG(GRAVE)   &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH   &kp PERCENT
-&kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS  &kp BSPC
-                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp COMMA  &kp N1                &kp N2      &kp N3                 &kp EQUAL
+&kp LG(GRAVE)   &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH       &kp PERCENT
+&kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS      &kp RIGHT_SHIFT
+                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp COMMA  &kp N1                &kp N2      &kp N3                 &kp BACKSPACE
                                                             &trans          &kp SPACE
                                       &trans     &trans     &trans          &trans     &kp N0                &kp DOT
             >;
