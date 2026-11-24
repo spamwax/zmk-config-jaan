@@ -8,7 +8,7 @@ manifest:
       url-base: https://github.com/urob
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: m165437 # new entry
+    - name: m165437
       url-base: https://github.com/M165437
   projects:
     - name: zmk
@@ -24,12 +24,14 @@ manifest:
     #   revision: main
     - name: zmk-auto-layer
       remote: urob
-      revision: v0.3 # set to same version as zmk
+      revision: v0.3
     - name: nice-view-gem
       remote: m165437
+      # same es 7794ebf
+      revision: v0.3.0
       # Pin before upstream switched nice-view-gem to the newer Zephyr/LVGL stack.
       # Commit 7794ebf is the known-good revision currently working with this
       # config's ZMK/Zephyr 3.5-era build.
-      revision: 7794ebf
+      # revision: 7794ebf
   self:
     path: config
