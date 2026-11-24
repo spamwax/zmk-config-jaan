@@ -24,12 +24,6 @@ jobs:
       - name: Checkout
         uses: https://data.forgejo.org/actions/checkout@v4
 
-      - name: Apply keymap editor compatibility fixes
-        run: |
-          chmod +x scripts/fix_fake_behaviors.sh
-          ./scripts/fix_fake_behaviors.sh
-          git diff -- config/jaan.keymap || true
-
       - name: Install Nix
         run: |
           curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix \
