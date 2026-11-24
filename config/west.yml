@@ -1,7 +1,7 @@
 manifest:
   remotes:
-    - name: spamwax-zmk
-      url-base: https://github.com/spamwax
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
     - name: dhruvinsh
       url-base: https://github.com/dhruvinsh
     - name: urob
@@ -11,27 +11,26 @@ manifest:
     - name: m165437
       url-base: https://github.com/M165437
   projects:
+    # Upstream ZMK v0.3 (Zephyr 3.5). Replaces the spamwax/zmk fork; the fork's
+    # patches are covered by the modules below. Previous state: tag fork-zmk-mainline-snapshot.
     - name: zmk
-      remote: spamwax-zmk
-      revision: mainline
+      remote: zmkfirmware
+      revision: v0.3
       clone-depth: 1
       import: app/west.yml
+    # Tri-state (app switcher). Upstream module; code-identical to spamwax/zmk-tri-state
+    # (both include the zmkfirmware/zmk#2409 API update). Pinned to the reviewed commit.
     - name: zmk-tri-state
-      remote: spamwax-zmk
-      revision: main
-    # - name: zmk-num-word
-    #   remote: dhruvinsh
-    #   revision: main
+      remote: dhruvinsh
+      revision: ebbc1f0ccdb51669650bb0ac3e34920d09e62400
+    # Auto-layer + num_word (replaces the fork's PR#1451 smart-word/num-word patch).
     - name: zmk-auto-layer
       remote: urob
       revision: v0.3
+    # v0.3.0 is the release for ZMK v0.3 (same commit as 7794ebf).
+    # Its main branch targets ZMK main / Zephyr 4.1+ and will not build here.
     - name: nice-view-gem
       remote: m165437
-      # same es 7794ebf
       revision: v0.3.0
-      # Pin before upstream switched nice-view-gem to the newer Zephyr/LVGL stack.
-      # Commit 7794ebf is the known-good revision currently working with this
-      # config's ZMK/Zephyr 3.5-era build.
-      # revision: 7794ebf
   self:
     path: config
