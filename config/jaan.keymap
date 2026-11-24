@@ -34,7 +34,7 @@
 
 // #define THUMB_HOLDING_TYPE "balanced"
 
-#include "unsupported-behaviors.dtsi"
+// unsupported-behaviors.dtsi is applied at build time by config/real-behaviors.overlay
 
 //
 // THUMB_HOLDING_TIME defines how long you need to hold (milliseconds)

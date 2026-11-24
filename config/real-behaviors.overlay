@@ -1,0 +1,27 @@
+/*
+ * Build-time replacement for the keymap-editor placeholder behaviors.
+ *
+ * nickcoutsos' keymap editor can't edit module behaviors (tri-state, auto-layer),
+ * so jaan.keymap defines stand-ins named fake_* with compatibles the editor knows.
+ * This file is passed to every build with -DEXTRA_DTC_OVERLAY_FILE (see build.yaml
+ * and the Justfile), so Zephyr applies it AFTER the keymap. It deletes each
+ * placeholder and puts its label on the real behavior, so &fake_appswmac,
+ * &fake_num_word 6, etc. in the keymap use the module behaviors without renaming.
+ */
+
+#include <dt-bindings/zmk/keys.h>
+#include "unsupported-behaviors.dtsi" // real appswmac, appswwin, nav_word, num_word
+
+/delete-node/ &fake_appswmac;
+/delete-node/ &fake_appswwin;
+/delete-node/ &fake_num_word;
+/delete-node/ &fake_nav_word;
+
+/ {
+    behaviors {
+        fake_appswmac: app_switch_mac {};
+        fake_appswwin: app_switch_win {};
+        fake_num_word: num_word {};
+        fake_nav_word: nav_word {};
+    };
+};
