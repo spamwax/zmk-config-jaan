@@ -513,7 +513,7 @@
             #binding-cells = <2>;
             bindings = <&mo>, <&shft_bspc>;
 
-            hold-trigger-key-positions = <30 31 32 33 34 35 12 13 14 15 16 17 24 25 26 27 28 29 35 36 37 38 39 3 4 5 41 46 47 23 11>;
+            hold-trigger-key-positions = <30 31 32 33 34 23 11 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 35 36 37 38 39 41 46 47 18 19 21 22>;
         };
 
         skq: sticky_key_quick_release {
@@ -677,7 +677,7 @@
             display-name = "numb";
             bindings = <
                            &trans     &to 0      &trans                                &kp LEFT_PARENTHESIS  &kp ESCAPE  &kp RIGHT_PARENTHESIS
-&kp LG(GRAVE)   &trans     &trans     &trans     &trans     &kp LG(S)       &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH       &kp PERCENT
+&kp LG(GRAVE)   &trans     &trans     &trans     &trans     &trans          &kp STAR   &kp N7                &kp N8      &kp N9                 &kp FSLH       &kp PERCENT
 &kp LEFT_SHIFT  &kp LGUI   &trans     &kp LALT   &kp LCTRL  &fake_appswmac  &kp PLUS   &kp N4                &kp N5      &kp N6                 &kp MINUS      &kp RIGHT_SHIFT
                 &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp LS(LG(Z))   &kp COMMA  &kp N1                &kp N2      &kp N3                 &kp BACKSPACE
                                                             &trans          &kp SPACE
@@ -751,7 +751,7 @@
             display-name = "wnum";
             bindings = <
                    &trans     &trans     &trans                             &trans  &trans  &trans
-&trans  &trans     &trans     &trans     &trans     &kp LC(S)       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans     &trans     &trans     &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans     &fake_appswwin  &trans  &trans  &trans  &trans  &trans  &trans
         &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))   &trans  &trans  &trans  &trans  &trans
                                                     &trans          &trans
